@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+
+.content {
+  flex: 1 0 auto;
+}
+
+
+
+.page-footer {
+  flex: 0 0 auto;
+}
+
+
+
+.container {
+  width: 100%;
+  max-width: @mobile;
+  min-width: @mobile;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.visually-hidden {
+  &:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}

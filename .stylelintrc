@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-htmlacademy",
+
+  "rules": {
+    "declaration-no-important": true,
+    "indentation": [2, {"ignore": ["inside-parens"]}],
+    "max-empty-lines": 3,
+    "selector-pseudo-element-colon-notation": "single",
+    "string-quotes": "single",
+    "function-url-quotes": "never",
+  }
+}

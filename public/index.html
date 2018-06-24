@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" href="css/styles.css" as="style" crossorigin>
+    <link rel="preload" href="fonts/roboto-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/roboto-500.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/roboto-500italic.woff2" as="font" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Станким</title>
+    <script>// (function(){
+//   function addFont() {
+//     let style = document.createElement('style');
+//     style.rel = 'stylesheet';
+//     document.head.appendChild(style);
+//     style.textContent = localStorage.fonts;
+//   }
+
+//   try {
+//     if (localStorage.fonts && false) {
+//       // The font is in localStorage, we can load it directly
+//       addFont();
+//     } else {
+//       // We have to first load the font file asynchronously
+//       let request = new XMLHttpRequest();
+//       request.open('GET', 'fonts/fonts.css', true);
+
+//       request.onload = function() {
+//         if (request.status >= 200 && request.status < 400) {
+//           // We save the file in localStorage
+//           localStorage.fonts = request.responseText;
+
+//           // ... and load the font
+//           addFont();
+//         }
+//       }
+
+//       request.send();
+//     }
+//   } catch(ex) {
+//   // maybe load the font synchronously for woff-capable browsers
+//   // to avoid blinking on every request when localStorage is not available
+//   }
+// }());
+
+
+// загрузка svg спрайта и сохранение в local.storage
+(function(window, document) {
+  'use strict';
+  var file = 'svg/sprite.svg', // путь к файлу спрайта на сервере
+      revision = 1;            // версия спрайта
+  if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+  var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+    request,
+    data,
+    insertIT = function() {
+      document.body.insertAdjacentHTML('afterbegin', data);
+    },
+    insert = function() {
+      if (document.body) insertIT();
+      else document.addEventListener('DOMContentLoaded', insertIT);
+    };
+  if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision-1) {
+    data = localStorage.getItem('inlineSVGdata');
+    if (data) {
+      insert();
+      return true;
+    }
+  }
+  try {
+    request = new XMLHttpRequest();
+    request.open('GET', file, true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        data = request.responseText;
+        insert();
+        if (isLocalStorage) {
+          localStorage.setItem('inlineSVGdata', data);
+          localStorage.setItem('inlineSVGrev', revision);
+        }
+      }
+    }
+    request.send();
+  } catch (e) {}
+}(window, document));
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <header class="page-header">
+          <div class="container">
+            <div class="page-header__row">
+              <button class="menu-toggle">Меню</button>
+              <div class="logo"><a class="logo__link" href="index.html"><img class="logo__img" src="img/logo.png" width="122" height="24" alt="Логотип Станким"></a></div>
+              <button class="search-toggle">
+                <svg class="search-toggle__icon" width="18" height="18">
+                  <use xlink:href="#icon_search"></use>
+                </svg><span class="visually-hidden">Поиск</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <h1 class="visually-hidden">Компания Станким</h1>
+        <section class="index-promo">
+          <div class="container">
+            <h2 class="visually-hidden">В центре внимания</h2>
+            <div class="index-promo__img-wrapper"><img class="index-promo__img" src="img/promo.png" alt="Современные обрабатывающие центра серии VDL/VDF"></div>
+            <div class="index-promo__info">
+              <p class="index-promo__name">Современные обрабатывающие центра серии VDL/VDF</p>
+              <p class="index-promo__description">Новый дизайн. Усиленная конструкция. Комплектующие от мировых лидеров</p>
+              <div class="link"><a class="link__button" href="#">Узнать подробнее</a></div>
+            </div>
+          </div>
+        </section>
+        <section class="special-offers">
+          <div class="container">
+            <div class="special-offers__header-row">
+              <h2 class="special-offers__header">Спецпредложения</h2>
+            </div>
+            <ul class="special-offers__list">
+              <li class="special-offers__item"><a class="item-card" href="#">
+                  <div class="item-card__img-wrapper"><img class="item-card__img" src="img/item-card.png" alt="VMC — 1400"></div>
+                  <h3 class="item-card__name">VMC — 1400</h3>
+                  <ul class="item-card__characteristics-list">
+                    <li class="item-card__characteristics-item">
+                      <p class="item-card__characteristics-name">Размер рабочего стола, мм:</p>
+                      <p class="item-card__characteristics-value">1400х710</p>
+                    </li>
+                    <li class="item-card__characteristics-item">
+                      <p class="item-card__characteristics-name">Перемещение по осям, мм:</p>
+                      <p class="item-card__characteristics-value">Х = 1400; Y = 700; Z = 760</p>
+                    </li>
+                  </ul></a></li>
+              <li class="special-offers__item"><a class="item-card" href="#">
+                  <div class="item-card__img-wrapper"><img class="item-card__img" src="img/item-card.png" alt="VMC — 1400"></div>
+                  <h3 class="item-card__name">VMC — 1400</h3>
+                  <ul class="item-card__characteristics-list">
+                    <li class="item-card__characteristics-item">
+                      <p class="item-card__characteristics-name">Размер рабочего стола, мм:</p>
+                      <p class="item-card__characteristics-value">1400х710</p>
+                    </li>
+                    <li class="item-card__characteristics-item">
+                      <p class="item-card__characteristics-name">Перемещение по осям, мм:</p>
+                      <p class="item-card__characteristics-value">Х = 1400; Y = 700; Z = 760</p>
+                    </li>
+                  </ul></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="news">
+          <div class="container">
+            <h2 class="news__header">Новости</h2>
+            <ul class="news__list">
+              <li class="news__item"><a class="news-card" href="#">
+                  <div class="news-card__img-wrapper"><img class="news-card__img" src="img/news-card.jpg" alt="Название картинки"></div>
+                  <div class="news-card__info">
+                    <time class="news-card__date">25 января 2018</time>
+                    <p class="news-card__header">ООО «Станким» получило обновленный сертификат партнера компании FANUC в области средств автоматизации и систем ЧПУ</p>
+                  </div></a></li>
+              <li class="news__item"><a class="news-card" href="#">
+                  <div class="news-card__img-wrapper"><img class="news-card__img" src="img/news-card.jpg" alt="Название картинки"></div>
+                  <div class="news-card__info">
+                    <time class="news-card__date">25 января 2018</time>
+                    <p class="news-card__header">ООО «Станким» получило обновленный сертификат партнера компании FANUC в области средств автоматизации и систем ЧПУ</p>
+                  </div></a></li>
+            </ul>
+            <div class="news__link-wrapper"><a class="news__link" href="#">Показать больше</a></div>
+          </div>
+        </section>
+        <section class="partners">
+          <div class="container">
+            <h2 class="partners__header">Наши партнёры</h2>
+            <ul class="partners__list">
+              <li class="partners__item"><a class="partners__link" href="#"><img class="partners__img" src="img/partner.jpg" alt="Концерн калашников"></a></li>
+              <li class="partners__item"><a class="partners__link" href="#"><img class="partners__img" src="img/partner.jpg" alt="Концерн калашников"></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <h2 class="about__header">О компании</h2>
+            <p class="about__text">Компания Станким более 10 лет специализируется на прямых поставках из Тайваня и других стран современного металлообрабатывающего оборудования и комплектующих для его производства. В компании работают высококвалифицированные специалисты с многолетним стажем работы в области внешнеэкономической деятельности и в таможенных органах.</p>
+            <p class="about__text">Мы поможем клиенту подобрать современное и надежное оборудование, наиболее подходящее для решения его конкретных технологических задач, доставим оборудование непосредственно заказчику, выполним пуско-наладочные работы, гарантийное и послегарантийное обслуживание. При необходимости наша компания предоставляет дополнительные услуги по поставке оборудования "под ключ", включая разработку технологии, изготовление оснастки, внедрение обработки детали на станке и др.</p>
+            <p class="about__text">На нашем складе в Ижевске постоянно имеются в наличии станочные светильники различных типов, станции смазки, компоненты системы подачи СОЖ и другие комплектующие, актуальный перечень которых вы можете посмотреть <a href="#">здесь</a>.</p>
+            <p class="about__text">Наша компания также оказывает весь спектр внешнеэкономических услуг, включая поиск по заказу клиента любого оборудования, как нового, так и б/у, производственных линий и комплексов. Мы обеспечим оформление и сопровождение внешнеэкономического контракта, доставку оборудования заказчику из любой точки мира, его таможенное оформление, а также перевод технической документации на русский язык в соответствии с требованиями российских стандартов.</p>
+            <p class="about__text">Доверьте решение Ваших проблем профессионалам</p>
+            <p class="about__text about__text--signature">С уважением, коллектив ООО «Станким»</p>
+          </div>
+        </section>
+      </div>
+      <footer class="page-footer">
+        <div class="container">
+          <nav class="main-navigation">
+            <ul class="main-navigation__list">
+              <li class="main-navigation__item"><a class="main-navigation__link">Оборудование</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link">Комплектующие</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link">Производители</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link">Склад</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link">Услуги</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="layout-contacts">
+            <ul class="layout-contacts__contacts">
+              <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">+7 (3412) 912-004</a></li>
+              <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">office@stankim.com</a></li>
+            </ul>
+          </div>
+          <div class="page-footer__copyright">© 2018</div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
