@@ -99,6 +99,45 @@
                   <use xlink:href="#icon_search"></use>
                 </svg><span class="visually-hidden">Поиск</span>
               </button>
+              <div class="menu">
+                <div class="menu__content">
+                  <nav class="main-navigation">
+                    <ul class="main-navigation__list">
+                      <li class="main-navigation__item"><a class="main-navigation__link main-navigation__link--dropdown" href="#">Оборудование
+                          <svg class="main-navigation__dropdown-icon" width="8" height="4">
+                            <use xlink:href="#icon_dropdown"></use>
+                          </svg></a>
+                        <ul class="main-navigation__list main-navigation__list--dropdown">
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">Фрезерные станки</a></li>
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">Токарные станки</a></li>
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">Электроэрозионные станки</a></li>
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">Шлифовальные станки</a></li>
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">Координатно измерительные машины</a></li>
+                        </ul>
+                      </li>
+                      <li class="main-navigation__item"><a class="main-navigation__link main-navigation__link--dropdown" href="#">Комплектующие
+                          <svg class="main-navigation__dropdown-icon" width="8" height="4">
+                            <use xlink:href="#icon_dropdown"></use>
+                          </svg></a>
+                        <ul class="main-navigation__list main-navigation__list--dropdown">
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">1</a></li>
+                          <li class="main-navigation__item"><a class="main-navigation__link" href="#">2</a></li>
+                        </ul>
+                      </li>
+                      <li class="main-navigation__item"><a class="main-navigation__link" href="#">Производители</a></li>
+                      <li class="main-navigation__item"><a class="main-navigation__link" href="#">Склад</a></li>
+                      <li class="main-navigation__item"><a class="main-navigation__link" href="#">Услуги</a></li>
+                      <li class="main-navigation__item"><a class="main-navigation__link" href="#">Контакты</a></li>
+                    </ul>
+                  </nav>
+                  <div class="layout-contacts">
+                    <ul class="layout-contacts__list">
+                      <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">+7 (3412) 912-004</a></li>
+                      <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">office@stankim.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -110,7 +149,7 @@
             <div class="index-promo__info">
               <p class="index-promo__name">Современные обрабатывающие центра серии VDL/VDF</p>
               <p class="index-promo__description">Новый дизайн. Усиленная конструкция. Комплектующие от мировых лидеров</p>
-              <div class="link"><a class="link__button" href="#">Узнать подробнее</a></div>
+              <div class="link"><a class="link__button" href="#">Узнать больше</a></div>
             </div>
           </div>
         </section>
@@ -122,30 +161,19 @@
             <ul class="special-offers__list">
               <li class="special-offers__item"><a class="item-card" href="#">
                   <div class="item-card__img-wrapper"><img class="item-card__img" src="img/item-card.png" alt="VMC — 1400"></div>
-                  <h3 class="item-card__name">VMC — 1400</h3>
-                  <ul class="item-card__characteristics-list">
-                    <li class="item-card__characteristics-item">
-                      <p class="item-card__characteristics-name">Размер рабочего стола, мм:</p>
-                      <p class="item-card__characteristics-value">1400х710</p>
-                    </li>
-                    <li class="item-card__characteristics-item">
-                      <p class="item-card__characteristics-name">Перемещение по осям, мм:</p>
-                      <p class="item-card__characteristics-value">Х = 1400; Y = 700; Z = 760</p>
-                    </li>
-                  </ul></a></li>
-              <li class="special-offers__item"><a class="item-card" href="#">
-                  <div class="item-card__img-wrapper"><img class="item-card__img" src="img/item-card.png" alt="VMC — 1400"></div>
-                  <h3 class="item-card__name">VMC — 1400</h3>
-                  <ul class="item-card__characteristics-list">
-                    <li class="item-card__characteristics-item">
-                      <p class="item-card__characteristics-name">Размер рабочего стола, мм:</p>
-                      <p class="item-card__characteristics-value">1400х710</p>
-                    </li>
-                    <li class="item-card__characteristics-item">
-                      <p class="item-card__characteristics-name">Перемещение по осям, мм:</p>
-                      <p class="item-card__characteristics-value">Х = 1400; Y = 700; Z = 760</p>
-                    </li>
-                  </ul></a></li>
+                  <div class="item-card__info">
+                    <h3 class="item-card__name">VMC — 1400</h3>
+                    <ul class="item-card__characteristics-list">
+                      <li class="item-card__characteristics-item">
+                        <p class="item-card__characteristics-name">Размер рабочего стола, мм:</p>
+                        <p class="item-card__characteristics-value">1400х710</p>
+                      </li>
+                      <li class="item-card__characteristics-item">
+                        <p class="item-card__characteristics-name">Перемещение по осям, мм:</p>
+                        <p class="item-card__characteristics-value">Х = 1400; Y = 700; Z = 760</p>
+                      </li>
+                    </ul>
+                  </div></a></li>
             </ul>
           </div>
         </section>
@@ -171,7 +199,9 @@
         </section>
         <section class="partners">
           <div class="container">
-            <h2 class="partners__header">Наши партнёры</h2>
+            <div class="partners__header-row">
+              <h2 class="partners__header">Наши партнёры</h2>
+            </div>
             <ul class="partners__list">
               <li class="partners__item"><a class="partners__link" href="#"><img class="partners__img" src="img/partner.jpg" alt="Концерн калашников"></a></li>
               <li class="partners__item"><a class="partners__link" href="#"><img class="partners__img" src="img/partner.jpg" alt="Концерн калашников"></a></li>
@@ -192,18 +222,18 @@
       </div>
       <footer class="page-footer">
         <div class="container">
-          <nav class="main-navigation">
+          <div class="main-navigation">
             <ul class="main-navigation__list">
-              <li class="main-navigation__item"><a class="main-navigation__link">Оборудование</a></li>
-              <li class="main-navigation__item"><a class="main-navigation__link">Комплектующие</a></li>
-              <li class="main-navigation__item"><a class="main-navigation__link">Производители</a></li>
-              <li class="main-navigation__item"><a class="main-navigation__link">Склад</a></li>
-              <li class="main-navigation__item"><a class="main-navigation__link">Услуги</a></li>
-              <li class="main-navigation__item"><a class="main-navigation__link">Контакты</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Оборудование</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Комплектующие</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Производители</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Склад</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Услуги</a></li>
+              <li class="main-navigation__item"><a class="main-navigation__link" href="#">Контакты</a></li>
             </ul>
-          </nav>
+          </div>
           <div class="layout-contacts">
-            <ul class="layout-contacts__contacts">
+            <ul class="layout-contacts__list">
               <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">+7 (3412) 912-004</a></li>
               <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">office@stankim.com</a></li>
             </ul>

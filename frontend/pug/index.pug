@@ -15,7 +15,7 @@ block content
         p.index-promo__description Новый дизайн. Усиленная конструкция. Комплектующие от мировых лидеров
 
         .link
-          a.link__button(href="#") Узнать подробнее
+          a.link__button(href="#") Узнать больше
 
 
 
@@ -29,26 +29,27 @@ block content
           a.item-card(href="#")
             .item-card__img-wrapper
               img.item-card__img(src="img/item-card.png", alt="VMC — 1400")
-            h3.item-card__name VMC — 1400
-            ul.item-card__characteristics-list
-              li.item-card__characteristics-item
-                p.item-card__characteristics-name Размер рабочего стола, мм:
-                p.item-card__characteristics-value 1400х710
-              li.item-card__characteristics-item
-                p.item-card__characteristics-name Перемещение по осям, мм:
-                p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
-        li.special-offers__item
-          a.item-card(href="#")
-            .item-card__img-wrapper
-              img.item-card__img(src="img/item-card.png", alt="VMC — 1400")
-            h3.item-card__name VMC — 1400
-            ul.item-card__characteristics-list
-              li.item-card__characteristics-item
-                p.item-card__characteristics-name Размер рабочего стола, мм:
-                p.item-card__characteristics-value 1400х710
-              li.item-card__characteristics-item
-                p.item-card__characteristics-name Перемещение по осям, мм:
-                p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
+            .item-card__info
+              h3.item-card__name VMC — 1400
+              ul.item-card__characteristics-list
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Размер рабочего стола, мм:
+                  p.item-card__characteristics-value 1400х710
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Перемещение по осям, мм:
+                  p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
+        //- li.special-offers__item
+        //-   a.item-card(href="#")
+        //-     .item-card__img-wrapper
+        //-       img.item-card__img(src="img/item-card.png", alt="VMC — 1400")
+        //-     h3.item-card__name VMC — 1400
+        //-     ul.item-card__characteristics-list
+        //-       li.item-card__characteristics-item
+        //-         p.item-card__characteristics-name Размер рабочего стола, мм:
+        //-         p.item-card__characteristics-value 1400х710
+        //-       li.item-card__characteristics-item
+        //-         p.item-card__characteristics-name Перемещение по осям, мм:
+        //-         p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
 
 
 
@@ -79,7 +80,8 @@ block content
 
   section.partners
     .container
-      h2.partners__header Наши партнёры
+      .partners__header-row
+        h2.partners__header Наши партнёры
 
       ul.partners__list
         li.partners__item
