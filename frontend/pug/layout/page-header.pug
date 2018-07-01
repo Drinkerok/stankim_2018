@@ -1,5 +1,5 @@
 header.page-header
-  .container
+  .container.page-header__container
     .page-header__row
       button.menu-toggle Меню
 
@@ -13,48 +13,59 @@ header.page-header
         span.visually-hidden Поиск
 
 
-      .menu
-        .menu__content
-          nav.main-navigation
-            ul.main-navigation__list
-              li.main-navigation__item
-                a.main-navigation__link.main-navigation__link--dropdown(href="#")
-                  | Оборудование
-                  svg.main-navigation__dropdown-icon(width="8" height="4")
-                    use(xlink:href="#icon_dropdown")
-                ul.main-navigation__list.main-navigation__list--dropdown
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") Фрезерные станки
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") Токарные станки
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") Электроэрозионные станки
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") Шлифовальные станки
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") Координатно измерительные машины
-              li.main-navigation__item
-                a.main-navigation__link.main-navigation__link--dropdown(href="#")
-                  | Комплектующие
-                  svg.main-navigation__dropdown-icon(width="8" height="4")
-                    use(xlink:href="#icon_dropdown")
-                ul.main-navigation__list.main-navigation__list--dropdown
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") 1
-                  li.main-navigation__item
-                    a.main-navigation__link(href="#") 2
-              li.main-navigation__item
-                a.main-navigation__link(href="#") Производители
-              li.main-navigation__item
-                a.main-navigation__link(href="#") Склад
-              li.main-navigation__item
-                a.main-navigation__link(href="#") Услуги
-              li.main-navigation__item
-                a.main-navigation__link(href="#") Контакты
+    form.search-form(action="#")
+      input.search-form__input(type="text" placeholder="Поиск по названию")
 
-          .layout-contacts
-            ul.layout-contacts__list
-              li.layout-contacts__item
-                a.layout-contacts__link(href="#") +7 (3412) 912-004
-              li.layout-contacts__item
-                a.layout-contacts__link(href="#") office@stankim.com
+
+    .layout-contacts
+      ul.layout-contacts__list
+        li.layout-contacts__item
+          a.layout-contacts__link(href="#")
+            svg.layout-contacts__icon(width="20" height="20")
+              use(xlink:href="#icon_phone")
+            |+7 (3412) 912-004
+        li.layout-contacts__item
+          a.layout-contacts__link(href="#")
+            svg.layout-contacts__icon(width="20" height="20")
+              use(xlink:href="#icon_dog")
+            span.layout-contacts__text office@stankim.com
+
+
+    .menu
+      .menu__content
+        nav.main-navigation
+          ul.main-navigation__list
+            li.main-navigation__item
+              a.main-navigation__link.main-navigation__link--dropdown(href="#")
+                | Оборудование
+                svg.main-navigation__dropdown-icon(width="8" height="4")
+                  use(xlink:href="#icon_dropdown")
+              ul.main-navigation__list.main-navigation__list--dropdown
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") Фрезерные станки
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") Токарные станки
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") Электроэрозионные станки
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") Шлифовальные станки
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") Координатно измерительные машины
+            li.main-navigation__item
+              a.main-navigation__link.main-navigation__link--dropdown(href="#")
+                | Комплектующие
+                svg.main-navigation__dropdown-icon(width="8" height="4")
+                  use(xlink:href="#icon_dropdown")
+              ul.main-navigation__list.main-navigation__list--dropdown
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") 1
+                li.main-navigation__item
+                  a.main-navigation__link(href="#") 2
+            li.main-navigation__item
+              a.main-navigation__link(href="#") Производители
+            li.main-navigation__item
+              a.main-navigation__link(href="#") Склад
+            li.main-navigation__item
+              a.main-navigation__link(href="#") Услуги
+            li.main-navigation__item
+              a.main-navigation__link(href="#") Контакты

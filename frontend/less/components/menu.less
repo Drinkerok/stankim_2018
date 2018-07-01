@@ -1,23 +1,29 @@
 .menu {
   width: 100%;
-  height: calc(~"100vh - 44px");
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgba(38, 38, 38, 0.2);
-  display: none;
 
-  .menu-open & {
-    display: block;
+
+  @media (max-width: (@tablet - 1)) {
+    height: calc(~"100vh" - @header-mobile-height);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(38, 38, 38, 0.2);
+    display: none;
+
+    .menu-open & {
+      display: block;
+    }
   }
 }
 
 .menu__content {
-  background-color: #fff;
-  padding: 0 0 15px;
-  width: 285px;
-  height: 100%;
-  overflow: auto;
+  @media (max-width: (@tablet - 1)) {
+    background-color: #fff;
+    padding: 0 0 15px;
+    width: 285px;
+    height: 100%;
+    overflow: auto;
+  }
 }
 
 
@@ -58,5 +64,9 @@
     &:after {
       transform: rotate(-45deg);
     }
+  }
+
+  @media (min-width: @tablet) {
+    display: none;
   }
 }

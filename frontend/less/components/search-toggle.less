@@ -4,9 +4,43 @@
   background-color: transparent;
   border: none;
   position: relative;
+  cursor: pointer;
 
   .menu-open & {
     display: none;
+  }
+
+  @media (min-width: @tablet) {
+    display: none;
+  }
+
+  .search-open & {
+    order: 10;
+    font-size: 0;
+    border: none;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 50%;
+      height: 2px;
+      background-color: @link-color-main;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      transform-origin: 50% 50%;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
   }
 }
 
@@ -20,4 +54,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  .search-open & {
+    display: none;
+  }
 }

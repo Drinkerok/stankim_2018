@@ -20,10 +20,15 @@
 
 .container {
   width: 100%;
-  max-width: @mobile;
+  max-width: @desktop;
   min-width: @mobile;
   margin: 0 auto;
   padding: 0 15px;
+
+
+  @media (min-width: @tablet) {
+    padding: 0 30px;
+  }
 }
 
 .visually-hidden {

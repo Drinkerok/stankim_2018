@@ -1,0 +1,32 @@
+.logo {
+  @media (min-width: @tablet) {
+    flex-shrink: 0;
+    order: -1;
+  }
+}
+
+
+.logo__link {
+  display: block;
+}
+
+
+
+.logo__img {
+  display: block;
+
+  @media (min-width: @tablet) {
+    width: 145px;
+    height: 30px;
+  }
+
+  @media (min-width: @desktop) {
+    width: 281px;
+    height: 58px;
+
+    .page-footer & {
+      width: 180px;
+      height: 38px;
+    }
+  }
+}

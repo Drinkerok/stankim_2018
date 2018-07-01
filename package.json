@@ -38,6 +38,7 @@
     "stylelint": "^9.2.0",
     "stylelint-config-htmlacademy": "^0.1.1",
     "through2": "^2.0.3",
+    "tiny-slider": "^2.7.3",
     "toaster": "^0.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-named": "^1.1.0",

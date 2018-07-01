@@ -18,9 +18,13 @@ body {
   font-size: 1.4rem;
   background-color: #fff;
 
-
   &.menu-open {
     overflow: hidden;
+  }
+
+
+  @media (min-width: @desktop) {
+    font-size: 1.6rem;
   }
 }
 
@@ -33,8 +37,21 @@ a {
   color: @link-color-main;
   text-decoration: none;
   font: inherit;
+  transition: 0.3s color;
+
+  &:hover,
+  &:focus {
+    color: @link-color-hover;
+  }
+
+  &:active {
+    color: #28ACF3;
+  }
 }
 
 input {
   font: inherit;
+
+  &::-webkit-input-placeholder { color: #7F7F7F;}
+  &:-ms-input-placeholder      { color: #7F7F7F;}
 }
