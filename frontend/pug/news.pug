@@ -1,0 +1,35 @@
+extends ./layout/index.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+  .container
+    h1.main-header Новости
+
+  section.news.news--page
+    .container
+      ul.news__list
+        li.news__item
+          a.news-card(href="#")
+            .news-card__img-wrapper
+              img.news-card__img(src="img/news-card.jpg", alt="Название картинки")
+            .news-card__info
+              time.news-card__date 25 января 2018
+              p.news-card__header ООО «Станким» получило обновленный сертификат партнера компании FANUC в области средств автоматизации и систем ЧПУ
+        li.news__item
+          a.news-card(href="#")
+            .news-card__img-wrapper
+              img.news-card__img(src="img/news-card.jpg", alt="Название картинки")
+            .news-card__info
+              time.news-card__date 25 января 2018
+              p.news-card__header ООО «Станким» получило обновленный сертификат партнера компании FANUC в области средств автоматизации и систем ЧПУ
+        li.news__item
+          a.news-card(href="#")
+            .news-card__img-wrapper
+              img.news-card__img(src="img/news-card.jpg", alt="Название картинки")
+            .news-card__info
+              time.news-card__date 25 января 2018
+              p.news-card__header ООО «Станким» получило обновленный сертификат партнера компании FANUC в области средств автоматизации и систем ЧПУ
+
+      .news__link-wrapper
+        a.news__link(href="#") Показать больше
