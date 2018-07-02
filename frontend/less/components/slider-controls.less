@@ -5,6 +5,16 @@
   &[hidden] {
     display: none;
   }
+
+  &--gallery {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
 }
 
 
@@ -27,6 +37,17 @@
     opacity: 0.3;
     cursor: default;
     cursor: not-allowed;
+  }
+
+  .slider-controls--gallery & {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--prev {
+      left: 0;
+    }
   }
 
   @media (min-width: @tablet) {

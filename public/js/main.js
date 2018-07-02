@@ -2889,6 +2889,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_header_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_search_header_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_special_offers_js__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_partners_js__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_gallery_js__ = __webpack_require__(51);
+
 
 
 
@@ -3668,6 +3670,46 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
       },
       1240: {
         items: 5,
+      }
+    },
+  })
+})();
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiny_slider_src_tiny_slider_module__ = __webpack_require__(6);
+
+
+(function() {
+  let block = document.querySelector('.gallery');
+  if (!block) return;
+
+  let list = block.querySelector('.gallery__list');
+  let controls = block.querySelector('.slider-controls');
+
+  block.classList.remove('no-js');
+
+  Object(__WEBPACK_IMPORTED_MODULE_0_tiny_slider_src_tiny_slider_module__["a" /* tns */])({
+    container: list,
+    items: 3,
+    slideBy: 1,
+    autoplay: false,
+    mouseDrag: false,
+    controls: true,
+    controlsContainer: controls,
+    nav: false,
+    speed: 300,
+    loop: false,
+    gutter: 0,
+    responsive: {
+      768: {
+        items: 8,
+      },
+      1240: {
+        items: 10,
       }
     },
   })
