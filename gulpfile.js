@@ -127,7 +127,8 @@ lazyRequireTask('clean', './tasks/clean.js', {});
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel('pug', 'img:sprite-svg', 'less', 'assets', 'img:static', 'webpack'))
+  'img:sprite-svg',
+  gulp.parallel('pug', 'less', 'assets', 'img:static', 'webpack'))
 );
 
 lazyRequireTask('server', './tasks/server.js', {
