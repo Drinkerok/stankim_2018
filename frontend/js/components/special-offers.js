@@ -1,6 +1,7 @@
 import { tns } from "tiny-slider/src/tiny-slider.module";
 
 (function() {
+  return;
   let block = document.querySelector('.special-offers');
   if (!block) return;
 

@@ -75,12 +75,16 @@
   list-style: none;
   padding: 10px 0;
 
-  .no-js {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
+  .no-js & {
+
+    @media (min-width: @tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
   }
+
 
   @media (min-width: @desktop) {
     background-color: #fff;
@@ -93,6 +97,14 @@
   padding: 5px 0;
 
   .no-js & {
-    margin: 0 5px 10px;
+    margin: 0 auto 20px;
+
+    @media (min-width: @tablet) {
+      margin: 0 10px 20px;
+      width: calc(~"33.333333% - 20px");
+    }
+    @media (min-width: @desktop) {
+      width: calc(~"25% - 20px");
+    }
   }
 }

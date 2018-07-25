@@ -2890,6 +2890,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_special_offers_js__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_partners_js__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_gallery_js__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_tabs_js__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_tabs_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_tabs_js__);
+
 
 
 
@@ -2976,6 +2979,7 @@ button.onclick = function(e) {
 
 
 (function() {
+  return;
   let block = document.querySelector('.special-offers');
   if (!block) return;
 
@@ -3713,6 +3717,40 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
       }
     },
   })
+})();
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+(function() {
+  let block = document.querySelector('.tabs');
+  if (!block) return;
+
+  const linkActiveClass = 'tabs__link--active';
+  const contentActiveClass = 'tabs__content-item--active';
+
+  let links = block.querySelectorAll('.tabs__link');
+  let items = block.querySelectorAll('.tabs__content-item');
+  let active = 0;
+
+  for (let i = 0; i < links.length; i++) {
+    let link = links[i];
+    link.onclick = function(e) {
+      e.preventDefault();
+      if (active != i) changeAtive(i);
+    };
+  }
+
+
+  function changeAtive(number) {
+    links[active].classList.remove(linkActiveClass);
+    items[active].classList.remove(contentActiveClass);
+
+    active = number;
+    links[active].classList.add(linkActiveClass);
+    items[active].classList.add(contentActiveClass);
+  }
 })();
 
 /***/ })

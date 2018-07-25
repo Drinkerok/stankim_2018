@@ -6,3 +6,4 @@ import './components/search-header.js';
 import './components/special-offers.js';
 import './components/partners.js';
 import './components/gallery.js';
+import './components/tabs.js';

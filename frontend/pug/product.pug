@@ -1,0 +1,175 @@
+extends ./layout/index.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+
+  .product
+    .container
+      h1.product__header HSM-1000L
+
+      .product__additional
+        .product__large-img-wrapper
+          img.product__large-img(src="img/product-large.jpg", alt="Подпись фотографии")
+
+        .product__additional-blocks
+          .product__additional-block
+            h2.product__additional-header Фотографии
+
+            .product-gallery
+              ul.product-gallery__list
+                li.product-gallery__item
+                  a.product-gallery__link.product-gallery__link--active(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+
+
+          .product__additional-block
+            h2.product__additional-header Видео
+
+            .product-gallery
+              ul.product-gallery__list
+                li.product-gallery__item
+                  a.product-gallery__link.product-gallery__link--video(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+                li.product-gallery__item
+                  a.product-gallery__link.product-gallery__link--video(href="#" target="_blank")
+                    img.product-gallery__preview(src="img/product-preview.jpg", alt="")
+
+
+          .product__additional-block
+            h2.product__additional-header Файлы
+
+            ul.product__file-list
+              li.product__file-item
+                a.product__file-link(href="#")
+                  svg.product__file-icon(width="35" height="40")
+                    use(xlink:href="#icon_pdf")
+                  .product__file-info
+                    .product__file-name Скачать каталог eumach_vmc_1200_1400_catalogue
+                    .product__file-size 3,5 МБ
+
+
+          .product__additional-block
+            a.product__ask-button(href="#") Задать вопрос
+
+
+      .tabs
+        ul.tabs__list
+          li.tabs__item
+            a.tabs__link.tabs__link--active(href="#") О товаре
+          li.tabs__item
+            a.tabs__link(href="#") Характеристики
+          li.tabs__item
+            a.tabs__link(href="#") Комплектация
+          li.tabs__item
+            a.tabs__link(href="#") Наличие на складе
+
+
+        ul.tabs__content-list
+          li.tabs__content-item.tabs__content-item--active
+            h2.visually-hidden Описание HSM-1000L
+            .product__about
+              p Вертикальные обрабатывающие центры серии VMC имеют неподвижную стойку (колонну) с вертикально-подвижной шпиндельной бабкой и подвижный крестовой стол.
+              p Конструкция станка с четыремя (шестью) поперечными направляющими стола обеспечивает высокую жесткость.
+              p Данная серия станков ориентирована на обработку любых типов заготовок, в том числе и для сложных и тяжелых режимов резания, часто применяемых в отечественном машиностроении.
+              p Наиболее часто обрабатываемые детали: корпуса, фланцы, пресс-формы и штампы.
+              p Станки серии VMC могут быть укомплектованы ЧПУ Fanuc, Siemens, Mitsubishi, Syntec.
+
+          li.tabs__content-item
+            h2.visually-hidden Характеристики HSM-1000L
+            
+            .product__tables
+              table
+                tbody
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+
+              table
+                tbody
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+
+          li.tabs__content-item
+            h2.visually-hidden Комплектация HSM-1000L
+
+            .product__equipments
+              .product__equipment
+                p.product__equipment-header Стандартная комплектация
+                ul.product__equipment-list
+                  li.product__equipment-item Ограждение стола кабинного типа
+                  li.product__equipment-item 20-инструментальный МСИ без манипулятора
+                  li.product__equipment-item Система подачи СОЖ
+                  li.product__equipment-item Автоматическая система смазки
+                  li.product__equipment-item Обдув конуса шпинделя сжатым воздухом
+                  li.product__equipment-item Рабочий светильник
+                  li.product__equipment-item Аварийный светильник
+                  li.product__equipment-item Индикатор начала и окончания цикла
+                  li.product__equipment-item Установочные болты и подкладки
+
+              .product__equipment
+                p.product__equipment-header Опции
+                ul.product__equipment-list
+                  li.product__equipment-item Ограждение стола кабинного типа
+                  li.product__equipment-item 20-инструментальный МСИ без манипулятора
+                  li.product__equipment-item Система подачи СОЖ
+                  li.product__equipment-item Автоматическая система смазки
+                  li.product__equipment-item Обдув конуса шпинделя сжатым воздухом
+                  li.product__equipment-item Рабочий светильник
+                  li.product__equipment-item Аварийный светильник
+                  li.product__equipment-item Индикатор начала и окончания цикла
+                  li.product__equipment-item Установочные болты и подкладки
+
+
+          li.tabs__content-item
+            h2.visually-hidden Наличие на складе
+
+            table
+              thead
+                tr
+                  th Код заказа
+                  th Описание товара
+                  th Кол-во на складе
+              tbody
+                tr
+                  td(data-type="Код заказа") 154 526 456
+                  td(data-type="Описание товара") Мы поможем клиенту подобрать современное и надежное оборудование, наиболее подходящее для решения его конкретных технологических задач, доставим оборудование непосредственно заказчику, выполним пуско-наладочные работы
+                  td(data-type="Кол-во на складе") 150 шт.
+                tr
+                  td(data-type="Код заказа") 154 526 456
+                  td(data-type="Описание товара") Мы поможем клиенту подобрать современное и надежное оборудование.
+                  td(data-type="Кол-во на складе") 150 шт.
