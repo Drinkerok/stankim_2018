@@ -182,7 +182,12 @@
           <div class="container">
             <h2 class="visually-hidden">В центре внимания</h2>
             <div class="index-promo__content">
-              <div class="index-promo__img-wrapper"><img class="index-promo__img" src="img/promo.png" alt="Современные обрабатывающие центра серии VDL/VDF"></div>
+              <div class="index-promo__img-wrapper">
+                <picture>
+                  <source media="(min-width: 1240px)" srcset="img/promo-desktop.png">
+                  <source media="(min-width: 768px)" srcset="img/promo-tablet.png"><img class="index-promo__img" src="img/promo-mobile.png" alt="Современные обрабатывающие центра серии VDL/VDF">
+                </picture>
+              </div>
               <div class="index-promo__info">
                 <p class="index-promo__name">Современные обрабатывающие центра серии VDL/VDF</p>
                 <p class="index-promo__description">Новый дизайн. Усиленная конструкция. Комплектующие от мировых лидеров</p>

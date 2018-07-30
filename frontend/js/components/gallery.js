@@ -1,4 +1,5 @@
-import { tns } from "tiny-slider/src/tiny-slider.module";
+// import { tns } from "tiny-slider/src/tiny-slider.module";
+import { tns } from "tiny-slider/src/tiny-slider";
 
 (function() {
   let block = document.querySelector('.gallery');
@@ -25,7 +26,7 @@ import { tns } from "tiny-slider/src/tiny-slider.module";
       768: {
         items: 8,
       },
-      1240: {
+      999: {
         items: 10,
       }
     },

@@ -1,4 +1,5 @@
-import { tns } from "tiny-slider/src/tiny-slider.module";
+// import { tns } from "tiny-slider/src/tiny-slider.module";
+import { tns } from "tiny-slider/src/tiny-slider";
 
 (function() {
   let block = document.querySelector('.partners');
@@ -25,7 +26,7 @@ import { tns } from "tiny-slider/src/tiny-slider.module";
       768: {
         items: 3,
       },
-      1240: {
+      999: {
         items: 5,
       }
     },

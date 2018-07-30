@@ -1,5 +1,7 @@
 'use strict';
 
+import "picturefill";
+
 import './components/hamburger.js';
 import './components/menu-dropdown.js';
 import './components/search-header.js';

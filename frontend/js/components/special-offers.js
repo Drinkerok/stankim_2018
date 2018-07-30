@@ -1,7 +1,7 @@
-import { tns } from "tiny-slider/src/tiny-slider.module";
+// import { tns } from "tiny-slider/src/tiny-slider.module";
+import { tns } from "tiny-slider/src/tiny-slider";
 
 (function() {
-  return;
   let block = document.querySelector('.special-offers');
   if (!block) return;
 
@@ -25,12 +25,10 @@ import { tns } from "tiny-slider/src/tiny-slider.module";
     responsive: {
       768: {
         items: 3,
-        slideBy: 3,
       },
-      1240: {
+      999: {
         items: 4,
-        slideBy: 4,
-      }
+      },
     },
   })
 })();

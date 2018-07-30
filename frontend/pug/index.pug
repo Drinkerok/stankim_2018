@@ -9,7 +9,10 @@ block content
 
       .index-promo__content
         .index-promo__img-wrapper
-          img.index-promo__img(src="img/promo.png", alt="Современные обрабатывающие центра серии VDL/VDF")
+          picture
+            source(media="(min-width: 1240px)" srcset="img/promo-desktop.png")
+            source(media="(min-width: 768px)" srcset="img/promo-tablet.png")
+            img.index-promo__img(src="img/promo-mobile.png", alt="Современные обрабатывающие центра серии VDL/VDF")
 
         .index-promo__info
           p.index-promo__name Современные обрабатывающие центра серии VDL/VDF

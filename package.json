@@ -34,11 +34,12 @@
     "gulp.spritesmith": "^6.5.0",
     "inputmask": "^3.3.11",
     "normalize.less": "^1.0.0",
+    "picturefill": "^3.0.2",
     "stream-combiner2": "^1.1.1",
     "stylelint": "^9.2.0",
     "stylelint-config-htmlacademy": "^0.1.1",
     "through2": "^2.0.3",
-    "tiny-slider": "^2.7.3",
+    "tiny-slider": "^2.8.2",
     "toaster": "^0.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-named": "^1.1.0",
@@ -51,7 +52,7 @@
   ],
   "dependencies": {
     "choices.js": "^3.0.4",
-    "tiny-slider": "^2.6.0"
+    "scrollerjs-npm": "^1.0.3"
   },
   "scripts": {
     "stylelint": "stylelint \"frontend/less/**/*.less\" --syntax less"

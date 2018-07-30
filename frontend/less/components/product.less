@@ -235,8 +235,8 @@
 
 .product td {
   padding: 8px 14px;
-  min-width: 170px;
   font-size: 1.2rem;
+  min-width: 95px;
   vertical-align: top;
 
   &:before {
@@ -247,6 +247,9 @@
   }
 
 
+  @media (min-width: @tablet) {
+    min-width: 170px;
+  }
   @media (min-width: @desktop) {
     font: inherit;
     padding: 16px 20px;
