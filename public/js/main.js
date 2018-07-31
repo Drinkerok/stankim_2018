@@ -5246,9 +5246,8 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
 
 /***/ }),
 /* 52 */
-/***/ (function(module, __webpack_exports__) {
+/***/ (function(module, exports) {
 
-"use strict";
 (function() {
   let block = document.querySelector('.tabs');
   if (!block) return;
