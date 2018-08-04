@@ -15,3 +15,33 @@ export function clickInsideElement(e, elClass) {
 
   return checkElement(target);
 }
+
+
+
+export function ajaxGet(link, onLoad, onError) {
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+
+  xhr.addEventListener('load', function () {
+    switch (xhr.status) {
+      case 200:
+        onLoad(xhr.response);
+        break;
+
+      default:
+        onError('Cтатус ответа: : ' + xhr.status + ' ' + xhr.statusText);
+    }
+  });
+
+  xhr.addEventListener('error', function () {
+    onError('Что-то пошло не так');
+  });
+
+  xhr.addEventListener('timeout', function () {
+    onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+  });
+
+
+  xhr.open('GET', link);
+  xhr.send();
+};

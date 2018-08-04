@@ -10,3 +10,4 @@ import './components/partners.js';
 import './components/gallery.js';
 import './components/tabs.js';
 import './components/stock.js';
+import './components/load-news.js';

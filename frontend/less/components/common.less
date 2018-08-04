@@ -51,3 +51,36 @@
   .h1();
   margin: 20px 0;
 }
+
+
+
+.decorated-block {
+  @media (min-width: @desktop) {
+    position: relative;
+    background-color: #fff;
+    padding: 54px 0 64px;
+
+    &:before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      background-color: #fff;
+      z-index: 0;
+    }
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #fff;
+      border-radius: 0 40px 40px 0;
+    }
+  }
+}

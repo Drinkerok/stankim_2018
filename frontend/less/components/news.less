@@ -74,6 +74,10 @@
 .news__link-wrapper {
   padding: 32px 0;
 
+  &--hidden {
+    display: none;
+  }
+
   @media (min-width: @tablet) {
     padding: 17px 0;
   }
@@ -96,6 +100,7 @@
   padding: 11px;
   text-align: center;
   transition: 0.3s background-color, 0.3s box-shadow;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -108,6 +113,10 @@
     color: #fff;
     background-color: #28ACF3;
     box-shadow: none;
+  }
+
+  &--no-js {
+    display: none;
   }
 
 
