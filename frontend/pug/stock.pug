@@ -4,13 +4,13 @@ block content
   include ./components/breadcrumbs.pug
 
 
-  .stock
+  .stock.no-js
     .container
       h1.stock__header Товары на складе
 
       ul.stock__list
         li.stock__item
-          a.stock__link(href="#")
+          button.stock__link(type="button")
             .stock__item-name Станки
             .stock__item-img-wrapper
               img.stock__item-img(src="img/stock-img.png", alt="Станки на складе")
@@ -37,7 +37,7 @@ block content
                   a.stock__pdf-link(href="#", target="_blank") Подробнее
 
         li.stock__item
-          a.stock__link(href="#")
+          button.stock__link(type="button")
             .stock__item-name Столы поворотные
             .stock__item-img-wrapper
               img.stock__item-img(src="img/stock-img.png", alt="Станки на складе")

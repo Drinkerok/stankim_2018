@@ -4,6 +4,8 @@ import {clickInsideElement} from "./common";
   let stock = document.querySelector('.stock');
   if (!stock) return;
 
+  stock.classList.remove('no-js');
+
   let list = stock.querySelector('.stock__list');
   list.addEventListener('click', function(e) {
     let link = clickInsideElement(e, 'stock__link');

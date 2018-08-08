@@ -1,5 +1,10 @@
 .product {
+  overflow: hidden;
 
+  @media (min-width: @desktop) {
+    padding-bottom: 40px;
+    background-image: linear-gradient(to bottom, #F4FBFF 80px, transparent 80px), linear-gradient(to top, #F4FBFF 80px, transparent 80px);
+  }
 }
 
 
@@ -27,6 +32,22 @@
   justify-content: center;
   align-items: flex-start;
   height: 210px;
+
+  &--loading {
+    position: relative;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(38, 38, 38, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
 
 
   @media (min-width: @tablet) {
