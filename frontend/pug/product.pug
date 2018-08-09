@@ -65,7 +65,7 @@ block content
 
 
           .aside-additional__block
-            a.product__ask-button(href="#") Задать вопрос
+            a.ask-button.button(href="#") Задать вопрос
 
 
       .tabs
@@ -244,3 +244,24 @@ block content
                 li.item-card__characteristics-item
                   p.item-card__characteristics-name Перемещение по осям, мм:
                   p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
+
+
+
+  .popup-ask.popup
+    .popup-ask__content.popup__content
+      form.popup-ask__form(action="#" method="POST")
+        p.popup-ask__header Задайте нам вопрос
+
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-name") Имя
+          input.popup-ask__input#ask-name(type="text", name="name", placeholder="Введите имя", required)
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-mail") Email
+          input.popup-ask__input#ask-mail(type="email", name="mail", placeholder="Введите email", required)
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-message") Сообщение
+          textarea.popup-ask__textarea#ask-message(type="email", name="message", placeholder="Введите вопрос", required)
+        .popup-ask__actions
+          button.popup-ask__submit.button(type="submit") Отправить
+      button.popup__close
+        span.visually-hidden Закрыть

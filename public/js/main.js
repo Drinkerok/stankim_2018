@@ -2846,8 +2846,9 @@ var passiveOption = supportsPassive ? { passive: true } : false;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = clickInsideElement;
+/* harmony export (immutable) */ __webpack_exports__["c"] = clickInsideElement;
 /* harmony export (immutable) */ __webpack_exports__["a"] = ajaxGet;
+/* harmony export (immutable) */ __webpack_exports__["b"] = ajaxPost;
 function clickInsideElement(e, elClass) {
   let target = e.target;
 
@@ -2869,7 +2870,7 @@ function clickInsideElement(e, elClass) {
 
 
 function ajaxGet(link, onLoad, onError) {
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
 
   xhr.addEventListener('load', function () {
@@ -2895,6 +2896,36 @@ function ajaxGet(link, onLoad, onError) {
   xhr.open('GET', link);
   xhr.send();
 };
+
+
+
+function ajaxPost(link, onLoad, onError) {
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+
+  xhr.addEventListener('load', function () {
+    switch (xhr.status) {
+      case 200:
+        onLoad(xhr.response);
+        break;
+
+      default:
+        onError('Cтатус ответа: : ' + xhr.status + ' ' + xhr.statusText);
+    }
+  });
+
+  xhr.addEventListener('error', function () {
+    onError('Что-то пошло не так');
+  });
+
+  xhr.addEventListener('timeout', function () {
+    onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+  });
+
+
+  xhr.open('GET', link);
+  xhr.send();
+}
 
 /***/ }),
 /* 13 */
@@ -2925,7 +2956,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_stock_js__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_load_news_js__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_show_img_js__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_show_img_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_show_img_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_ask_js__ = __webpack_require__(58);
+
 
 
 
@@ -5382,7 +5414,7 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
 
   let list = stock.querySelector('.stock__list');
   list.addEventListener('click', function(e) {
-    let link = Object(__WEBPACK_IMPORTED_MODULE_0__common__["b" /* clickInsideElement */])(e, 'stock__link');
+    let link = Object(__WEBPACK_IMPORTED_MODULE_0__common__["c" /* clickInsideElement */])(e, 'stock__link');
 
     if (!link) return;
 
@@ -5481,16 +5513,26 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
 
 /***/ }),
 /* 56 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__popup__ = __webpack_require__(57);
+
 
 const imgWrapper = document.querySelector('.product__large-img-wrapper');
-const largeImg = imgWrapper ? imgWrapper.querySelector('.product__large-img') : null;
+const largeImg = imgWrapper ? imgWrapper.querySelector('.product__large-img') : document.querySelector('.popup-img__img');
 const containers = document.querySelectorAll('.aside-gallery__list');
 const loadingImg = document.createElement('img');
 
+
 loadingImg.onload = () => {
-  imgWrapper.classList.remove('product__large-img-wrapper--loading');
   largeImg.src = loadingImg.src;
+
+  if (imgWrapper) {
+    imgWrapper.classList.remove('product__large-img-wrapper--loading');
+  } else {
+    __WEBPACK_IMPORTED_MODULE_0__popup__["a" /* popupActions */].open(document.querySelector('.popup-img'));
+  }
 }
 
 
@@ -5498,24 +5540,149 @@ Array.from(containers).forEach((item) => new ImgGroup(item));
 
 
 function ImgGroup(container) {
-  const links = container.querySelectorAll('.aside-gallery__link');
-  let active = 0;
+  const links = Array.from(container.querySelectorAll('.aside-gallery__link')).filter((link) => !link.classList.contains('aside-gallery__link--video'));
+  let active = container.querySelector('.aside-gallery__link--active') ? 0 : null;
 
-  Array.from(links).forEach((link, i) => {
+  links.forEach((link, i) => {
     link.onclick = (e) => {
       e.preventDefault();
-      if (i == active) return;
+      if (active && i == active) return;
 
-      imgWrapper.classList.add('product__large-img-wrapper--loading')
-      links[active].classList.remove('aside-gallery__link--active');
-      active = i;
-      links[active].classList.add('aside-gallery__link--active');
+      if (imgWrapper) {
+        imgWrapper.classList.add('product__large-img-wrapper--loading');
+      } else {
+        document.querySelector('.popup-img__description').textContent = link.getAttribute('data-description') || '';
+        __WEBPACK_IMPORTED_MODULE_0__popup__["a" /* popupActions */].open(document.querySelector('.popup-img'));
+      }
+      if (active || active === 0) {
+        links[active].classList.remove('aside-gallery__link--active');
+        active = i;
+        links[active].classList.add('aside-gallery__link--active');
+      }
 
       largeImg.src = 'img/loading.svg';
       loadingImg.src = link.href;
     }
   });
 }
+
+/***/ }),
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+let popup = null;
+let cb = null;
+
+let isEscPressed = function(e) {
+  return e.keyCode == 27;
+}
+
+let closeByEsc = function(e) {
+  if (isEscPressed(e)) {
+    closePopup();
+  }
+}
+
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('popup__close')) {
+    closePopup();
+  }
+});
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('popup')) {
+    closePopup();
+  }
+});
+
+
+
+function openPopup(incomePopup, callback) {
+  popup = incomePopup;
+  cb = callback;
+
+  popup.classList.add('popup--active');
+  window.addEventListener('keydown', closeByEsc);
+}
+
+function closePopup() {
+  if (!popup) return;
+
+  popup.classList.remove('popup--active');
+  window.removeEventListener('keydown', closeByEsc);
+
+  if (cb) cb();
+
+  popup = null;
+  cb = null;
+}
+
+
+const popupActions = {
+  open: openPopup,
+  close: closePopup,
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = popupActions;
+
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__popup__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common__ = __webpack_require__(12);
+
+
+
+
+(function() {
+  const button = document.querySelector('.ask-button');
+  const popup = document.querySelector('.popup-ask');
+  if (!button || !popup) return;
+
+  const inputs = Array.from(popup.querySelectorAll('.popup-ask__input'));
+  inputs.forEach((input) => {
+    const ls = localStorage ? localStorage.getItem(input.name) : null;
+    if (ls) input.value = ls;
+  });
+  const textarea = popup.querySelector('.popup-ask__textarea');
+
+
+
+  button.onclick = (e) => {
+    e.preventDefault();
+    __WEBPACK_IMPORTED_MODULE_0__popup__["a" /* popupActions */].open(popup, closePopup);
+  };
+
+
+  function closePopup() {
+    form.classList.remove('popup-ask__form--loading');
+    form.classList.remove('popup-ask__form--success');
+    textarea.value = '';
+  }
+
+
+
+  const form = popup.querySelector('.popup-ask__form');
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    form.classList.add('popup-ask__form--loading');
+    Object(__WEBPACK_IMPORTED_MODULE_1__common__["b" /* ajaxPost */])(form.action, sendSuccess, console.log)
+  }
+
+  function sendSuccess(response) {
+    inputs.forEach((input) => {
+      localStorage.setItem(input.name, input.value);
+    });
+    form.classList.remove('popup-ask__form--loading');
+    form.classList.add('popup-ask__form--success');
+  }
+  function sendFailed(response) {
+    alert(response);
+  }
+})();
 
 /***/ })
 /******/ ]);

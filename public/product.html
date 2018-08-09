@@ -236,7 +236,7 @@
                         </div></a></li>
                   </ul>
                 </div>
-                <div class="aside-additional__block"><a class="product__ask-button" href="#">Задать вопрос</a></div>
+                <div class="aside-additional__block"><a class="ask-button button" href="#">Задать вопрос</a></div>
               </div>
             </div>
             <div class="tabs">
@@ -443,6 +443,29 @@
                     </ul>
                   </div></a></li>
             </ul>
+          </div>
+        </div>
+        <div class="popup-ask popup">
+          <div class="popup-ask__content popup__content">
+            <form class="popup-ask__form" action="#" method="POST">
+              <p class="popup-ask__header">Задайте нам вопрос</p>
+              <div class="popup-ask__input-wrapper">
+                <label class="popup-ask__label" for="ask-name">Имя</label>
+                <input class="popup-ask__input" id="ask-name" type="text" name="name" placeholder="Введите имя" required>
+              </div>
+              <div class="popup-ask__input-wrapper">
+                <label class="popup-ask__label" for="ask-mail">Email</label>
+                <input class="popup-ask__input" id="ask-mail" type="email" name="mail" placeholder="Введите email" required>
+              </div>
+              <div class="popup-ask__input-wrapper">
+                <label class="popup-ask__label" for="ask-message">Сообщение</label>
+                <textarea class="popup-ask__textarea" id="ask-message" type="email" name="message" placeholder="Введите вопрос" required></textarea>
+              </div>
+              <div class="popup-ask__actions">
+                <button class="popup-ask__submit button" type="submit">Отправить</button>
+              </div>
+            </form>
+            <button class="popup__close"><span class="visually-hidden">Закрыть</span></button>
           </div>
         </div>
       </div>
