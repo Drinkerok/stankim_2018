@@ -1,0 +1,30 @@
+.news {
+  background-color: #F4FBFF;
+
+  &--index {
+    padding-top: 130px;
+  }
+}
+
+
+
+.news__list {
+  @media (min-width: @tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: calc(~"100% + 20px");
+    margin: 0 -10px;
+  }
+}
+
+
+.news__item {
+  margin: 0 0 10px;
+
+  @media (min-width: @tablet) {
+    width: calc(~"33.333333% - 20px");
+    margin: 0 10px 15px;
+  }
+}

@@ -19,17 +19,12 @@
 
 
 .container {
-  width: 100%;
-  max-width: @desktop;
-  min-width: @mobile;
+  width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
-
-
-  @media (min-width: @tablet) {
-    padding: 0 30px;
-  }
+  padding: 0 10px;
 }
+
+
 
 .visually-hidden {
   &:not(:focus):not(:active) {
@@ -50,44 +45,4 @@
 .main-header {
   .h1();
   margin: 20px 0;
-}
-
-
-
-.decorated-block {
-  @media (min-width: @desktop) {
-    position: relative;
-    background-color: #fff;
-    padding-top: 54px;
-    padding-bottom: 64px;
-
-    &:before {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 100vw;
-      position: absolute;
-      top: 0;
-      right: 100%;
-      background-color: #fff;
-      z-index: 0;
-    }
-    &:after {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 40px;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      background-color: #fff;
-      border-radius: 0 40px 40px 0;
-    }
-
-
-    .special-offers & {
-      padding-top: 15px;
-      padding-bottom: 40px;
-    }
-  }
 }

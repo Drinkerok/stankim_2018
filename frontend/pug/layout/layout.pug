@@ -1,0 +1,27 @@
+doctype html
+html(lang="ru")
+  head
+    link(rel="preload" href="css/styles.css" as="style" crossorigin)
+    link(rel="preload" href="fonts/roboto-regular.woff2" as="font" crossorigin)
+    link(rel="preload" href="fonts/roboto-500.woff2" as="font" crossorigin)
+    link(rel="preload" href="fonts/roboto-500italic.woff2" as="font" crossorigin)
+
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    title Станким
+    script
+      include head-script.js
+    link(rel="stylesheet" href="css/styles.css")
+
+
+
+  body
+    .wrapper
+      .content
+        include page-header.pug
+        block content
+      include page-footer.pug
+
+
+
+    script(src="js/main.js")

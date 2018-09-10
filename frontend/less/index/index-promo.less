@@ -1,0 +1,46 @@
+.index-promo {
+  background-color: #e5e5e5;
+  padding-bottom: 150px;
+}
+
+
+
+.index-promo__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+
+
+.index-promo__info {
+  order: -1;
+  width: 55%;
+  flex-shrink: 0;
+  padding: 25px 25px 25px 0;
+  background-color: #fff;
+  position: relative;
+
+  &:before {
+    content: '';
+    height: 100%;
+    width: 50vw;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+}
+
+
+
+.index-promo__name {
+  .h2();
+}
+
+
+
+.index-promo__description {
+  margin: 0 0 30px;
+}

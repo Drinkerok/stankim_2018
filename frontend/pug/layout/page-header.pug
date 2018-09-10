@@ -1,71 +1,39 @@
 header.page-header
-  .container.page-header__container
+  .container
     .page-header__row
-      button.menu-toggle Меню
-
       .logo
-        a.logo__link(href="index.html")
-          img.logo__img(src="img/logo.svg" width="122" height="24" alt="Логотип Станким")
+        a.logo__link(href="#")
+          img.logo__img(src="./img/logo.svg", alt="Логотип Станким", width="281", height="58")
 
-      button.search-toggle
-        svg.search-toggle__icon(width="18" height="18")
-          use(xlink:href="#icon_search")
-        span.visually-hidden Поиск
+      form.search-form(action="#")
+        input#search-header.search-form__input(type="text")
+        label.search-form__label(for="search-header")
+          span.visually-hidden Поиск по названию
+          svg(width="18", height="18").search-form__label-icon
+            use(xlink:href="#icon_search")
 
+      .layout-contacts
+        ul.layout-contacts__list
+          li.layout-contacts__item
+            a.layout-contacts__link(href="tel:+7 (3412) 912-004")
+              |+7 (3412) 912-004
+              svg(width="20", height="20").layout-contacts__link-icon
+                use(xlink:href="#icon_phone")
+          li.layout-contacts__item
+            a.layout-contacts__link(href="mailto:office@stankim.com")
+              |office@stankim.com
+              svg(width="20", height="20").layout-contacts__link-icon
+                use(xlink:href="#icon_dog")
 
-    form.search-form(action="#")
-      input.search-form__input(type="text" placeholder="Поиск по названию")
-
-
-    .layout-contacts
-      ul.layout-contacts__list
-        li.layout-contacts__item
-          a.layout-contacts__link(href="#")
-            svg.layout-contacts__icon(width="20" height="20")
-              use(xlink:href="#icon_phone")
-            |+7 (3412) 912-004
-        li.layout-contacts__item
-          a.layout-contacts__link(href="#")
-            svg.layout-contacts__icon(width="20" height="20")
-              use(xlink:href="#icon_dog")
-            span.layout-contacts__text office@stankim.com
-
-
-    .menu
-      .menu__content
-        nav.main-navigation
-          ul.main-navigation__list
-            li.main-navigation__item
-              a.main-navigation__link.main-navigation__link--dropdown(href="#")
-                | Оборудование
-                svg.main-navigation__dropdown-icon(width="8" height="4")
-                  use(xlink:href="#icon_dropdown")
-              ul.main-navigation__list.main-navigation__list--dropdown
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") Фрезерные станки
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") Токарные станки
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") Электроэрозионные станки
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") Шлифовальные станки
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") Координатно измерительные машины
-            li.main-navigation__item
-              a.main-navigation__link.main-navigation__link--dropdown(href="#")
-                | Комплектующие
-                svg.main-navigation__dropdown-icon(width="8" height="4")
-                  use(xlink:href="#icon_dropdown")
-              ul.main-navigation__list.main-navigation__list--dropdown
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") 1
-                li.main-navigation__item
-                  a.main-navigation__link(href="catalog.html") 2
-            li.main-navigation__item
-              a.main-navigation__link(href="producers.html") Производители
-            li.main-navigation__item
-              a.main-navigation__link(href="stock.html") Склад
-            li.main-navigation__item
-              a.main-navigation__link(href="#") Услуги
-            li.main-navigation__item
-              a.main-navigation__link(href="contacts.html") Контакты
+    nav.main-navigation
+      ul.main-navigation__list
+        li.main-navigation__item
+          a.main-navigation__link(href="#") Оборудование
+        li.main-navigation__item
+          a.main-navigation__link(href="#") Комплектующие
+        li.main-navigation__item
+          a.main-navigation__link(href="#") Производители
+        li.main-navigation__item
+          a.main-navigation__link(href="#") Склад
+        li.main-navigation__item
+          a.main-navigation__link(href="#") Контакты
