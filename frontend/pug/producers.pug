@@ -1,0 +1,54 @@
+extends ./layout/layout.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+
+  .producers
+    .container.decorated-block
+      h1.producers__header Производители
+
+      ul.producers__word-list
+        li.producers__word-item
+          a.producers__word-link.producers__word-link--active A
+        li.producers__word-item
+          a.producers__word-link(href="#") B
+        li.producers__word-item
+          a.producers__word-link(href="#") C
+        li.producers__word-item
+          a.producers__word-link(href="#") D
+        li.producers__word-item
+          a.producers__word-link(href="#") E
+        li.producers__word-item
+          a.producers__word-link(href="#") F
+
+
+      ul.producers__list
+        li.producers__item
+          a.producers__link(href="producer.html")
+            .producers__img-wrapper
+              img.producers__img(src="http://stankim.snewer.ru/uploads/images/3l/ww/yn/5b7652584777e.jpg", alt="")
+            .producers__about
+              h2.producers__name Eumach
+              p.producers__description Вертикальные, горизонтальные, портальные, 5-осевые обрабатывающие центры.
+        li.producers__item
+          a.producers__link(href="producer.html")
+            .producers__img-wrapper
+              img.producers__img(src="http://stankim.snewer.ru/uploads/images/7y/zk/pf/5b76567e6aca3.jpg", alt="")
+            .producers__about
+              h2.producers__name ROUNDTOP MACHINERY INDUSTRIES CO., LTD.
+              p.producers__description Токарные станки с наклонной станиной, горизонтальные ОЦ, портальные ОЦ, токарно-карусельные станки.
+        li.producers__item
+          a.producers__link(href="producer.html")
+            .producers__img-wrapper
+              img.producers__img(src="http://stankim.snewer.ru/uploads/images/3l/ww/yn/5b7652584777e.jpg", alt="")
+            .producers__about
+              h2.producers__name Eumach
+              p.producers__description Вертикальные, горизонтальные, портальные, 5-осевые обрабатывающие центры.
+        li.producers__item
+          a.producers__link(href="producer.html")
+            .producers__img-wrapper
+              img.producers__img(src="http://stankim.snewer.ru/uploads/images/7y/zk/pf/5b76567e6aca3.jpg", alt="")
+            .producers__about
+              h2.producers__name ROUNDTOP MACHINERY INDUSTRIES CO., LTD.
+              p.producers__description Токарные станки с наклонной станиной, горизонтальные ОЦ, портальные ОЦ, токарно-карусельные станки.

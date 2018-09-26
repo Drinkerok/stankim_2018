@@ -34,13 +34,15 @@ a {
   font: inherit;
   transition: 0.3s color;
 
-  &:hover,
-  &:focus {
-    color: @link-color-hover;
-  }
+  &[href] {
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+    }
 
-  &:active {
-    color: @link-color-active;
+    &:active {
+      color: @link-color-active;
+    }
   }
 }
 

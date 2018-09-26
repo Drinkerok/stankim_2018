@@ -8,8 +8,6 @@ import { tns } from "tiny-slider/src/tiny-slider";
   let list = block.querySelector('.partners__list');
   let controls = block.querySelector('.slider-controls');
 
-  block.classList.remove('no-js');
-
   tns({
     container: list,
     items: 2,

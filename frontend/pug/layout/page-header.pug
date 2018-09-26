@@ -2,38 +2,80 @@ header.page-header
   .container
     .page-header__row
       .logo
-        a.logo__link(href="#")
-          img.logo__img(src="./img/logo.svg", alt="Логотип Станким", width="281", height="58")
+        a.logo__link(href="index.html")
+          img.logo__img(src="./img/logo.svg", alt="Логотип Станким", width="122", height="24")
 
       form.search-form(action="#")
         input#search-header.search-form__input(type="text")
         label.search-form__label(for="search-header")
           span.visually-hidden Поиск по названию
-          svg(width="18", height="18").search-form__label-icon
+          svg.search-form__label-icon(width="18", height="18", aria-hidden="true", role="presentation")
             use(xlink:href="#icon_search")
 
       .layout-contacts
         ul.layout-contacts__list
           li.layout-contacts__item
-            a.layout-contacts__link(href="tel:+7 (3412) 912-004")
+            a.layout-contacts__link(href="tel:+7(3412)912-004")
               |+7 (3412) 912-004
-              svg(width="20", height="20").layout-contacts__link-icon
+              svg(width="20", height="20", aria-hidden="true", role="presentation").layout-contacts__link-icon
                 use(xlink:href="#icon_phone")
           li.layout-contacts__item
             a.layout-contacts__link(href="mailto:office@stankim.com")
               |office@stankim.com
-              svg(width="20", height="20").layout-contacts__link-icon
+              svg(width="20", height="20", aria-hidden="true", role="presentation").layout-contacts__link-icon
                 use(xlink:href="#icon_dog")
 
     nav.main-navigation
       ul.main-navigation__list
         li.main-navigation__item
-          a.main-navigation__link(href="#") Оборудование
+          a.main-navigation__link(href="catalog.html")
+            |Оборудование
+            svg.main-navigation__dropdown-icon(width="8", height="4", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_dropdown")
+          ul.main-navigation__list.main-navigation__list--dropdown
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Фрезерные станки
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Токарные станки
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Электроэрозионные станки
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Координатно измерительные машины
         li.main-navigation__item
-          a.main-navigation__link(href="#") Комплектующие
+          a.main-navigation__link(href="catalog.html")
+            |Комплектующие
+            svg.main-navigation__dropdown-icon(width="8", height="4", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_dropdown")
+          ul.main-navigation__list.main-navigation__list--dropdown
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Поворотные столы для станков с ЧПУ
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Станочные светильники
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Магазины смены инструмента
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Станции смазки для станков
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Шпиндели для станков
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Масляные охладители шпиндел
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Фильтры-уловители масляного тумана и паров СОЖ
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Гидростанции
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Резцедержки для токарных станков с ЧПУ
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Оборудование для подачи СОЖ
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Пульты станочные выносные
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Кондиционеры и теплообменники для электрошкафов
+            li.main-navigation__item
+              a.main-navigation__link(href="catalog.html") Муфты для сервоприводов
         li.main-navigation__item
-          a.main-navigation__link(href="#") Производители
+          a.main-navigation__link(href="producers.html") Производители
         li.main-navigation__item
-          a.main-navigation__link(href="#") Склад
+          a.main-navigation__link(href="stock.html") Склад
         li.main-navigation__item
-          a.main-navigation__link(href="#") Контакты
+          a.main-navigation__link(href="contacts.html") Контакты

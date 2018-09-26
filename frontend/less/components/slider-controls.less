@@ -1,0 +1,60 @@
+.slider-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+
+
+.slider-controls__button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid @shadow-color;
+  border-radius: 0 50% 50% 0;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s opacity;
+
+  &--prev {
+    border-radius: 50% 0 0 50%;
+  }
+
+  &[disabled] {
+    opacity: 0.3;
+    cursor: default;
+    cursor: not-allowed;
+  }
+}
+
+
+
+.slider-controls__icon {
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: @text-color-main;
+  transition: 0.3s fill;
+  transform-origin: 50% 50%;
+
+
+  .slider-controls__button--prev & {
+    transform: rotate(180deg);
+  }
+
+
+  .slider-controls__button:hover &,
+  .slider-controls__button:focus & {
+    fill: @link-color-hover;
+  }
+  .slider-controls__button:active & {
+    fill: @link-color-active;
+  }
+}

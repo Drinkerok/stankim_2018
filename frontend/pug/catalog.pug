@@ -1,0 +1,34 @@
+extends ./layout/layout.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+
+  .catalog
+    .container
+      h1.catalog__header Группа
+      .catalog__description
+        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi autem, voluptate enim dignissimos fuga earum eveniet asperiores sint veritatis consequuntur qui distinctio perspiciatis recusandae nesciunt iste incidunt adipisci in nihil commodi dolores culpa, delectus. Magni nemo, alias eveniet repellendus sapiente beatae atque! Rem eligendi voluptatem suscipit, molestias totam sit amet.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae veritatis ipsam temporibus, dolore animi atque accusamus, similique quasi at aperiam.
+
+
+      ul.catalog__list
+        li.catalog__item
+          a.item-card(href="catalog.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
+            .item-card__info
+              h2.item-card__name VMC-1200
+        li.catalog__item
+          a.item-card(href="catalog.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="http://stankim.snewer.ru/uploads/images/pk/yf/g1/5b97786173209.jpg", alt="VMC-1200")
+            .item-card__info
+              h3.item-card__name VMC-1200
+              ul.item-card__characteristics-list
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Размер рабочего стола, мм:
+                  p.item-card__characteristics-value 1400х710
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Перемещение по осям, мм:
+                  p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760

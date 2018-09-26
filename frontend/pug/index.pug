@@ -1,7 +1,7 @@
 extends ./layout/layout.pug
 
 block content
-  h1.visually-hidden Главная страница STANKIM
+  h1.visually-hidden ООО Станким
 
   section.index-promo
     .container
@@ -13,8 +13,8 @@ block content
             a.link__button(href="#") Узнать больше
         .index-promo__img-wrapper
           picture
-            source(media="min-width: 1240px", srcset="./img/promo-desktop.png")
-            source(media="min-width: 768px", srcset="./img/promo-tablet.png")
+            source(media="(min-width: 1240px)", srcset="./img/promo-desktop.png")
+            source(media="(min-width: 768px)", srcset="./img/promo-tablet.png")
             img.index-promo__img(src="./img/promo-mobile.png", alt="5-осевые фрезерные обрабатывающие центры EUMAСH серии UMC")
 
 
@@ -22,11 +22,41 @@ block content
   section.special-offers.section
     .container.decorated-block
       .section__header-row
-        a.section__header-link(href="#") Спецпредложения
+        h2.section__header
+          a.section__header-link Спецпредложения
+
+        .slider-controls
+          button.slider-controls__button.slider-controls__button--prev
+            span.visually-hidden Предыдущий слайд
+            svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_arrow")
+          button.slider-controls__button
+            span.visually-hidden Следующий слайд
+            svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_arrow")
 
       ul.special-offers__list
         li.special-offers__item
-          a.item-card(href="#")
+          a.item-card(href="catalog.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
+            .item-card__info
+              h3.item-card__name VMC-1200
+        li.special-offers__item
+          a.item-card(href="catalog.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="http://stankim.snewer.ru/uploads/images/pk/yf/g1/5b97786173209.jpg", alt="VMC-1200")
+            .item-card__info
+              h3.item-card__name VMC-1200
+              ul.item-card__characteristics-list
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Размер рабочего стола, мм:
+                  p.item-card__characteristics-value 1400х710
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Перемещение по осям, мм:
+                  p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
+        li.special-offers__item
+          a.item-card(href="catalog.html")
             .item-card__img-wrapper
               img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
             .item-card__info
@@ -39,7 +69,7 @@ block content
                   p.item-card__characteristics-name Перемещение по осям, мм:
                   p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
         li.special-offers__item
-          a.item-card(href="#")
+          a.item-card(href="catalog.html")
             .item-card__img-wrapper
               img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
             .item-card__info
@@ -52,20 +82,7 @@ block content
                   p.item-card__characteristics-name Перемещение по осям, мм:
                   p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
         li.special-offers__item
-          a.item-card(href="#")
-            .item-card__img-wrapper
-              img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
-            .item-card__info
-              h3.item-card__name VMC-1200
-              ul.item-card__characteristics-list
-                li.item-card__characteristics-item
-                  p.item-card__characteristics-name Размер рабочего стола, мм:
-                  p.item-card__characteristics-value 1400х710
-                li.item-card__characteristics-item
-                  p.item-card__characteristics-name Перемещение по осям, мм:
-                  p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
-        li.special-offers__item
-          a.item-card(href="#")
+          a.item-card(href="catalog.html")
             .item-card__img-wrapper
               img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
             .item-card__info
@@ -83,7 +100,11 @@ block content
   section.news.news--index.section
     .container
       .section__header-row
-        a.section__header-link(href="#") Новости
+        h2.section__header
+          a.section__header-link(href="#")
+            |Новости
+            svg.section__header-icon(width="6", height="11", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_arrow")
 
       ul.news__list
         li.news__item
@@ -91,19 +112,82 @@ block content
             .news-card__img-wrapper
               img.news-card__img(src="./img/news-card.jpg", alt="")
             .news-card__info
-              time.news-card__date 12 марта 2018
-              p.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018»
+              time.news-card__date(datetime="2018-03-12") 12 марта 2018
+              h3.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018»
         li.news__item
           a.news-card(href="#")
             .news-card__img-wrapper
               img.news-card__img(src="./img/news-card.jpg", alt="")
             .news-card__info
-              time.news-card__date 12 марта 2018
-              p.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018»
+              time.news-card__date(datetime="2018-03-12") 12 марта 2018
+              h3.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018» Выставка «Металлообработка. Сварка — Урал. 2018»
         li.news__item
           a.news-card(href="#")
             .news-card__img-wrapper
               img.news-card__img(src="./img/news-card.jpg", alt="")
             .news-card__info
-              time.news-card__date 12 марта 2018
-              p.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018»
+              time.news-card__date(datetime="2018-03-12") 12 марта 2018
+              h3.news-card__header Выставка «Металлообработка. Сварка — Урал. 2018»
+
+      .news__more-wrapper
+        a.news__more-link(href="news.json") Показать больше
+
+
+
+  section.section.partners
+    .container
+      .section__header-row
+        h2.section__header
+          a.section__header-link Наши партнёры
+
+        .slider-controls
+          button.slider-controls__button.slider-controls__button--prev
+            span.visually-hidden Предыдущий слайд
+            svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_arrow")
+          button.slider-controls__button
+            span.visually-hidden Следующий слайд
+            svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+              use(xlink:href="#icon_arrow")
+
+      ul.partners__list
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/gs/ob/az/5b982bd1e0f08.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/7w/jw/gi/5b982bd1e83f7.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/gs/ob/az/5b982bd1e0f08.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/7w/jw/gi/5b982bd1e83f7.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/gs/ob/az/5b982bd1e0f08.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/7w/jw/gi/5b982bd1e83f7.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/gs/ob/az/5b982bd1e0f08.jpg", alt="")
+        li.partners__item
+          a.partners__link(href="#")
+            img.partners__img(src="http://stankim.snewer.ru/uploads/images/7w/jw/gi/5b982bd1e83f7.jpg", alt="")
+
+
+
+  section.section.about
+    .container
+      .section__header-row
+        h2.section__header
+          a.section__header-link О компании
+
+      p Компания Станким более 10 лет специализируется на прямых поставках из Тайваня и других стран современного металлообрабатывающего оборудования и комплектующих для его производства. В компании работают высококвалифицированные специалисты с многолетним стажем работы в области внешнеэкономической деятельности и в таможенных органах.
+      p Мы поможем клиенту подобрать современное и надежное оборудование, наиболее подходящее для решения его конкретных технологических задач, доставим оборудование непосредственно заказчику, выполним пуско-наладочные работы, гарантийное и послегарантийное обслуживание. При необходимости наша компания предоставляет дополнительные услуги по поставке оборудования "под ключ", включая разработку технологии, изготовление оснастки, внедрение обработки детали на станке и др.
+      p На нашем складе в Ижевске постоянно имеются в наличии станочные светильники различных типов, станции смазки, компоненты системы подачи СОЖ и другие комплектующие, актуальный перечень которых вы можете посмотреть здесь.
+      p Наша компания также оказывает весь спектр внешнеэкономических услуг, включая поиск по заказу клиента любого оборудования, как нового, так и б/у, производственных линий и комплексов. Мы обеспечим оформление и сопровождение внешнеэкономического контракта, доставку оборудования заказчику из любой точки мира, его таможенное оформление, а также перевод технической документации на русский язык в соответствии с требованиями российских стандартов.
+      p Доверьте решение Ваших проблем профессионалам
+      p С уважением, коллектив ООО «Станким»
+

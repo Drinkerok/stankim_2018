@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0 10px;
 }
 
 
@@ -15,4 +16,26 @@
 .section__header-link {
   .h2();
   color: @text-color-main;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+.section__header-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  fill: @text-color-main;
+  transition: 0.3s fill;
+
+  .section__header-link:hover &,
+  .section__header-link:focus & {
+    fill: @link-color-hover;
+  }
+  .section__header-link:active & {
+    fill: @link-color-active;
+  }
 }

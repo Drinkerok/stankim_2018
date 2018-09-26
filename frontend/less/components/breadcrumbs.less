@@ -1,0 +1,50 @@
+.breadcrumbs {
+  padding: 20px 0 0;
+  background-color: @bg-decorated-color;
+}
+
+
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: calc(~"100% + 20px");
+  margin: 0 -10px;
+}
+
+
+
+.breadcrumbs__item {
+  margin: 0 5px 20px;
+}
+
+
+
+.breadcrumbs__link {
+  font-size: 1.4rem;
+  display: block;
+  color: @date-color-main;
+}
+
+
+
+.breadcrumbs__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  transform-origin: 50% 50%;
+  transform: rotate(180deg);
+  fill: @date-color-main;
+  transition: 0.3s fill;
+
+  .breadcrumbs__link[href]:hover &,
+  .breadcrumbs__link[href]:focus & {
+    fill: @link-color-hover;
+  }
+
+  .breadcrumbs__link[href]:active & {
+    fill: @link-color-active;
+  }
+}
