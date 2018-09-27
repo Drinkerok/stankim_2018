@@ -4,8 +4,8 @@ const gulp = require('gulp');
 const combiner = require('stream-combiner2').obj;
 const $ = require('gulp-load-plugins')();
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
-// const isDevelopment = false;
+// const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDevelopment = false;
 
 module.exports = function(options) {
   return function() {

@@ -18,60 +18,19 @@ export function clickInsideElement(e, elClass) {
 
 
 
-export function ajaxGet(link, onLoad, onError) {
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
+export function setNewImg({imgEl, descriptionEl, link, description}) {
+  descriptionEl.classList.remove(`empty`);
+  descriptionEl.textContent = `Загрузка...`;
+  imgEl.src = ``;
 
-  xhr.addEventListener('load', function () {
-    switch (xhr.status) {
-      case 200:
-        onLoad(xhr.response);
-        break;
-
-      default:
-        onError('Cтатус ответа: : ' + xhr.status + ' ' + xhr.statusText);
+  const newImg = document.createElement(`img`);
+  newImg.onload = () => {
+    imgEl.src = link;
+    if (description && description !== ``) {
+      descriptionEl.textContent = description;
+    } else {
+      descriptionEl.classList.add(`empty`);
     }
-  });
-
-  xhr.addEventListener('error', function () {
-    onError('Что-то пошло не так');
-  });
-
-  xhr.addEventListener('timeout', function () {
-    onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
-  });
-
-
-  xhr.open('GET', link);
-  xhr.send();
-};
-
-
-
-export function ajaxPost(link, onLoad, onError) {
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-
-  xhr.addEventListener('load', function () {
-    switch (xhr.status) {
-      case 200:
-        onLoad(xhr.response);
-        break;
-
-      default:
-        onError('Cтатус ответа: : ' + xhr.status + ' ' + xhr.statusText);
-    }
-  });
-
-  xhr.addEventListener('error', function () {
-    onError('Что-то пошло не так');
-  });
-
-  xhr.addEventListener('timeout', function () {
-    onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
-  });
-
-
-  xhr.open('GET', link);
-  xhr.send();
+  };
+  newImg.src = link;
 }

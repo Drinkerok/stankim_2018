@@ -9,7 +9,8 @@ const path = require('path');
 // const gulplog = require('gulplog');
 
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+// const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDevelopment = false;
 
 module.exports = function(options) {
   let firstBuildReady = false;

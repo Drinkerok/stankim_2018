@@ -1,13 +1,14 @@
 import {ajaxGet} from "./../components/ajax";
 
+const COUNT_LOAD_NEWS = 3;
+
 (function() {
   const news = document.querySelector(`.news`);
   if (!news) return;
   const button = news.querySelector(`.news__more-link`);
   if (!button) return;
 
-
-  let counter = 0;
+  let counter = COUNT_LOAD_NEWS;
 
 
   const newsList = news.querySelector(`.news__list`);
@@ -55,7 +56,7 @@ import {ajaxGet} from "./../components/ajax";
     return li;
   }
   function initResponse(response, ...data) {
-    counter++;
+    counter += COUNT_LOAD_NEWS;
     const news = response.data;
     if (!response.more) {
       button.parentNode.parentNode.removeChild(button.parentNode);

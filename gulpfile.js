@@ -104,11 +104,11 @@ gulp.task('webpack', function(callback) {
       }))
       .pipe(named())
       .pipe(webpackStream(options, null, done))
-      // .pipe($.babel({
-      //   presets: ['es2015', 'stage-0']
-      // }))
-      // .pipe($.uglify({
-      // }))
+      .pipe($.babel({
+        presets: ['es2015', 'stage-0']
+      }))
+      .pipe($.uglify({
+      }))
       .pipe(gulp.dest('public/js'))
       .on('data', function() {
         if (firstBuildReady) {

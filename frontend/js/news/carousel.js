@@ -1,16 +1,5 @@
 import {tns} from "tiny-slider/src/tiny-slider";
-
-function setNewImg({imgEl, descriptionEl, link, description}) {
-  descriptionEl.textContent = `Загрузка...`;
-  imgEl.src = ``;
-
-  const newImg = document.createElement(`img`);
-  newImg.onload = () => {
-    imgEl.src = link;
-    descriptionEl.textContent = description;
-  };
-  newImg.src = link;
-}
+import {setNewImg} from "./../components/common";
 
 (function() {
   const block = document.querySelector(`.carousel`);

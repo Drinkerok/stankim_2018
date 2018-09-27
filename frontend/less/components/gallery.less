@@ -26,6 +26,19 @@
   .card();
   position: relative;
 
+  &--active {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
   .gallery--video & {
     &:after {
       content: '';
@@ -41,4 +54,11 @@
       transform: translate(-50%, -50%);
     }
   }
+}
+
+
+
+.gallery__preview {
+  display: block;
+  margin: 0 auto;
 }

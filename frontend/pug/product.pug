@@ -2,3 +2,230 @@ extends ./layout/layout.pug
 
 block content
   include ./components/breadcrumbs.pug
+
+
+  .product
+    .container.decorated-block
+      h1.product__header VMC-1100
+      .product__row
+        .product__large-img
+          .product__img-wrapper
+            img.product__img(src="http://stankim.snewer.ru/uploads/images/we/jd/rh/5b6f1b36f235b.jpg", alt="")
+          p.product__img-description Описание фотографии
+
+        .product__info
+          .product__info-block
+            h2.product__info-header Фотографии
+            .gallery.gallery--photo
+              ul.gallery__list
+                li.gallery__item
+                  a.gallery__link.gallery__link--active(href="http://stankim.snewer.ru/uploads/images/16/xl/tv/5b6f1b3e611ce.jpg", target="_blank", data-alt="Описание1")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="http://stankim.snewer.ru/uploads/images/0m/ss/ny/5b6f1b3e78186.jpg", target="_blank", data-alt="")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="http://stankim.snewer.ru/uploads/images/mw/ws/t3/5b6f1b4ed76af.jpg", target="_blank", data-alt="Описание3")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="http://stankim.snewer.ru/uploads/images/0d/su/rz/5b6f1b4f09fcc.jpg", target="_blank", data-alt="Описание4")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
+
+          .product__info-block
+            h2.product__info-header Видео
+            .gallery.gallery--video
+              ul.gallery__list
+                li.gallery__item
+                  a.gallery__link(href="#", target="_blank")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/91/0r/rs/5b7e865040357.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="#", target="_blank")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/91/0r/rs/5b7e865040357.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="#", target="_blank")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/91/0r/rs/5b7e865040357.jpg", alt="")
+                li.gallery__item
+                  a.gallery__link(href="#", target="_blank")
+                    img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/91/0r/rs/5b7e865040357.jpg", alt="")
+
+          .product__info-block
+            h2.product__info-header Файлы
+            ul.product__pdf-list
+              li.product__pdf-item
+                a.product__pdf-link(href="#", target="_blank")
+                  .pdf-file
+                    .pdf-file__about
+                      svg.pdf-file__icon(width="35", height="40", aria-hidden="true", role="presentation")
+                        use(xlink:href="#icon_pdf")
+                      h3.pdf-file__name Каталог фрезерных 5-осевых станков
+                      p.pdf-file__size 1.68 МБ
+              li.product__pdf-item
+                a.product__pdf-link(href="#", target="_blank")
+                  .pdf-file
+                    .pdf-file__about
+                      svg.pdf-file__icon(width="35", height="40", aria-hidden="true", role="presentation")
+                        use(xlink:href="#icon_pdf")
+                      h3.pdf-file__name Каталог фрезерных 5-осевых станков
+                      p.pdf-file__size 1.68 МБ
+              li.product__pdf-item
+                a.product__pdf-link(href="#", target="_blank")
+                  .pdf-file
+                    .pdf-file__about
+                      svg.pdf-file__icon(width="35", height="40", aria-hidden="true", role="presentation")
+                        use(xlink:href="#icon_pdf")
+                      h3.pdf-file__name Каталог фрезерных 5-осевых станков
+                      p.pdf-file__size 1.68 МБ
+
+          .product__info-block
+            a.product__ask-link.button Задать вопрос
+
+      .tabs
+        .tabs__list-wrapper
+          ul.tabs__list
+            li.tabs__item
+              a.tabs__link.tabs__link--active(href="#") О товаре
+            li.tabs__item
+              a.tabs__link(href="#") Характеристики
+            li.tabs__item
+              a.tabs__link(href="#") Комплектация
+            li.tabs__item
+              a.tabs__link(href="#") Наличие на складе
+
+
+        ul.tabs__content-list
+          li.tabs__content-item.tabs__content-item--active
+            h2.visually-hidden Описание HSM-1000L
+            .product__about
+              p Вертикальные обрабатывающие центры серии VMC имеют неподвижную стойку (колонну) с вертикально-подвижной шпиндельной бабкой и подвижный крестовой стол.
+              p Конструкция станка с четыремя (шестью) поперечными направляющими стола обеспечивает высокую жесткость.
+              p Данная серия станков ориентирована на обработку любых типов заготовок, в том числе и для сложных и тяжелых режимов резания, часто применяемых в отечественном машиностроении.
+              p Наиболее часто обрабатываемые детали: корпуса, фланцы, пресс-формы и штампы.
+              p Станки серии VMC могут быть укомплектованы ЧПУ Fanuc, Siemens, Mitsubishi, Syntec.
+
+          li.tabs__content-item
+            h2.visually-hidden Характеристики HSM-1000L
+            
+            .product__tables
+              table
+                tbody
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+
+              table
+                tbody
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+                  tr
+                    td Перемещение по осям X,Y,Z
+                    td 1400x700x760 мм
+
+          li.tabs__content-item
+            h2.visually-hidden Комплектация HSM-1000L
+
+            .product__equipments
+              .product__equipment
+                p.product__equipment-header Стандартная комплектация
+                ul.product__equipment-list
+                  li.product__equipment-item Ограждение стола кабинного типа
+                  li.product__equipment-item 20-инструментальный МСИ без манипулятора
+                  li.product__equipment-item Система подачи СОЖ
+                  li.product__equipment-item Автоматическая система смазки
+                  li.product__equipment-item Обдув конуса шпинделя сжатым воздухом
+                  li.product__equipment-item Рабочий светильник
+                  li.product__equipment-item Аварийный светильник
+                  li.product__equipment-item Индикатор начала и окончания цикла
+                  li.product__equipment-item Установочные болты и подкладки
+
+              .product__equipment
+                p.product__equipment-header Опции
+                ul.product__equipment-list
+                  li.product__equipment-item Ограждение стола кабинного типа
+                  li.product__equipment-item 20-инструментальный МСИ без манипулятора
+                  li.product__equipment-item Система подачи СОЖ
+                  li.product__equipment-item Автоматическая система смазки
+                  li.product__equipment-item Обдув конуса шпинделя сжатым воздухом
+                  li.product__equipment-item Рабочий светильник
+                  li.product__equipment-item Аварийный светильник
+                  li.product__equipment-item Индикатор начала и окончания цикла
+                  li.product__equipment-item Установочные болты и подкладки
+
+
+          li.tabs__content-item
+            h2.visually-hidden Наличие на складе
+
+            table
+              thead
+                tr
+                  th Код заказа
+                  th Описание товара
+                  th Кол-во на складе
+              tbody
+                tr
+                  td(data-type="Код заказа") 154 526 456
+                  td(data-type="Описание товара") Мы поможем клиенту подобрать современное и надежное оборудование, наиболее подходящее для решения его конкретных технологических задач, доставим оборудование непосредственно заказчику, выполним пуско-наладочные работы
+                  td(data-type="Кол-во на складе") 150 шт.
+                tr
+                  td(data-type="Код заказа") 154 526 456
+                  td(data-type="Описание товара") Мы поможем клиенту подобрать современное и надежное оборудование.
+                  td(data-type="Кол-во на складе") 150 шт.
+
+  .catalog.catalog--product
+    .container
+      h2.catalog__header Другие модели
+
+      ul.catalog__list
+        li.catalog__item
+          a.item-card(href="product.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="./img/item-card.png", alt="VMC-1200")
+            .item-card__info
+              h3.item-card__name VMC-1200
+        li.catalog__item
+          a.item-card(href="product.html")
+            .item-card__img-wrapper
+              img.item-card__img(src="http://stankim.snewer.ru/uploads/images/pk/yf/g1/5b97786173209.jpg", alt="VMC-1200")
+            .item-card__info
+              h3.item-card__name VMC-1200
+              ul.item-card__characteristics-list
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Размер рабочего стола, мм:
+                  p.item-card__characteristics-value 1400х710
+                li.item-card__characteristics-item
+                  p.item-card__characteristics-name Перемещение по осям, мм:
+                  p.item-card__characteristics-value Х = 1400; Y = 700; Z = 760
+
+
+  .popup-ask.popup
+    .popup-ask__content.popup__content
+      form.popup-ask__form(action="#" method="POST")
+        p.popup-ask__header Задайте нам вопрос
+
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-name") Имя
+          input.popup-ask__input#ask-name(type="text", name="name", placeholder="Введите имя", required)
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-mail") Email
+          input.popup-ask__input#ask-mail(type="email", name="mail", placeholder="Введите email", required)
+        .popup-ask__input-wrapper
+          label.popup-ask__label(for="ask-message") Сообщение
+          textarea.popup-ask__textarea#ask-message(type="email", name="message", placeholder="Введите вопрос", required)
+        button.popup-ask__submit.button(type="submit") Отправить
+      button.popup__close
+        span.visually-hidden Закрыть

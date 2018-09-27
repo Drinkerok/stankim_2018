@@ -52,6 +52,6 @@ export function ajaxPost(link, onLoad, onError, ...data) {
   });
 
 
-  xhr.open('GET', link);
+  xhr.open('POST', link);
   xhr.send();
 }

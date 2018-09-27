@@ -1,11 +1,20 @@
 .catalog {
   padding: 20px 0;
+
+  &--product {
+    background-color: @bg-decorated-color;
+    padding: 0;
+  }
 }
 
 
 
 .catalog__header {
   .h1();
+
+  .catalog--product & {
+    .h2();
+  }
 }
 
 

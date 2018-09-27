@@ -67,15 +67,15 @@ block content
           .producer__logo-wrapper
             img.producer__logo(src="http://stankim.snewer.ru/uploads/images/60/s7/pm/5b7651f11251f.jpg", alt="")
 
-          .producer__additional-block
+          .producer__additional-block.producer__additional-block--photo
             h2.producer__additional-header Фотографии
-            .gallery.gallery
+            .gallery
               ul.gallery__list
                 li.gallery__item
-                  a.gallery__link(href="#", target="_blank")
+                  a.gallery__link(href="http://stankim.snewer.ru/uploads/images/te/mb/9r/5b6f1b39a50a9.jpg", target="_blank", data-alt="Описание 1")
                     img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
                 li.gallery__item
-                  a.gallery__link(href="#", target="_blank")
+                  a.gallery__link(href="http://stankim.snewer.ru/uploads/images/99/ty/dn/5b6f1b4d0d7f5.jpg", target="_blank", data-alt="Описание 2")
                     img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/xw/lk/su/5b7e8561eed9a.jpg", alt="")
                 li.gallery__item
                   a.gallery__link(href="#", target="_blank")
@@ -102,3 +102,11 @@ block content
                     img.gallery__preview(src="http://stankim.snewer.ru/uploads/images/91/0r/rs/5b7e865040357.jpg", alt="")
 
         
+
+
+  .popup-img.popup
+    .popup__content.popup-img__content
+      img.popup-img__img(src="", alt="")
+      p.popup-img__description
+      button.popup__close
+        span.visually-hidden Закрыть
