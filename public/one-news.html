@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" href="css/styles.css" as="style" crossorigin>
+    <link rel="preload" href="fonts/roboto-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/roboto-500.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/roboto-500italic.woff2" as="font" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Станким</title>
+    <script>// (function(){
+//   function addFont() {
+//     let style = document.createElement('style');
+//     style.rel = 'stylesheet';
+//     document.head.appendChild(style);
+//     style.textContent = localStorage.fonts;
+//   }
+
+//   try {
+//     if (localStorage.fonts && false) {
+//       // The font is in localStorage, we can load it directly
+//       addFont();
+//     } else {
+//       // We have to first load the font file asynchronously
+//       let request = new XMLHttpRequest();
+//       request.open('GET', 'fonts/fonts.css', true);
+
+//       request.onload = function() {
+//         if (request.status >= 200 && request.status < 400) {
+//           // We save the file in localStorage
+//           localStorage.fonts = request.responseText;
+
+//           // ... and load the font
+//           addFont();
+//         }
+//       }
+
+//       request.send();
+//     }
+//   } catch(ex) {
+//   // maybe load the font synchronously for woff-capable browsers
+//   // to avoid blinking on every request when localStorage is not available
+//   }
+// }());
+
+
+// загрузка svg спрайта и сохранение в local.storage
+(function(window, document) {
+  'use strict';
+  var file = 'svg/sprite.svg', // путь к файлу спрайта на сервере
+      revision = 1;            // версия спрайта
+  if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+  var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+    request,
+    data,
+    insertIT = function() {
+      document.body.insertAdjacentHTML('afterbegin', data);
+    },
+    insert = function() {
+      if (document.body) insertIT();
+      else document.addEventListener('DOMContentLoaded', insertIT);
+    };
+  if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision-1) {
+    data = localStorage.getItem('inlineSVGdata');
+    if (data) {
+      insert();
+      return true;
+    }
+  }
+  try {
+    request = new XMLHttpRequest();
+    request.open('GET', file, true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        data = request.responseText;
+        insert();
+        if (isLocalStorage) {
+          localStorage.setItem('inlineSVGdata', data);
+          localStorage.setItem('inlineSVGrev', revision);
+        }
+      }
+    }
+    request.send();
+  } catch (e) {}
+}(window, document));
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <header class="page-header">
+          <div class="container">
+            <div class="page-header__row">
+              <div class="logo"><a class="logo__link" href="index.html"><img class="logo__img" src="./img/logo.svg" alt="Логотип Станким" width="122" height="24"></a></div>
+              <form class="search-form" action="#">
+                <input class="search-form__input" id="search-header" type="text">
+                <label class="search-form__label" for="search-header"><span class="visually-hidden">Поиск по названию</span>
+                  <svg class="search-form__label-icon" width="18" height="18" aria-hidden="true" role="presentation">
+                    <use xlink:href="#icon_search"></use>
+                  </svg>
+                </label>
+              </form>
+              <div class="layout-contacts">
+                <ul class="layout-contacts__list">
+                  <li class="layout-contacts__item"><a class="layout-contacts__link" href="tel:+7(3412)912-004">+7 (3412) 912-004
+                      <svg class="layout-contacts__link-icon" width="20" height="20" aria-hidden="true" role="presentation">
+                        <use xlink:href="#icon_phone"></use>
+                      </svg></a></li>
+                  <li class="layout-contacts__item"><a class="layout-contacts__link" href="mailto:office@stankim.com">office@stankim.com
+                      <svg class="layout-contacts__link-icon" width="20" height="20" aria-hidden="true" role="presentation">
+                        <use xlink:href="#icon_dog"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+            <nav class="main-navigation">
+              <ul class="main-navigation__list">
+                <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Оборудование
+                    <svg class="main-navigation__dropdown-icon" width="8" height="4" aria-hidden="true" role="presentation">
+                      <use xlink:href="#icon_dropdown"></use>
+                    </svg></a>
+                  <ul class="main-navigation__list main-navigation__list--dropdown">
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Фрезерные станки</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Токарные станки</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Электроэрозионные станки</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Координатно измерительные машины</a></li>
+                  </ul>
+                </li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Комплектующие
+                    <svg class="main-navigation__dropdown-icon" width="8" height="4" aria-hidden="true" role="presentation">
+                      <use xlink:href="#icon_dropdown"></use>
+                    </svg></a>
+                  <ul class="main-navigation__list main-navigation__list--dropdown">
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Поворотные столы для станков с ЧПУ</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Станочные светильники</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Магазины смены инструмента</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Станции смазки для станков</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Шпиндели для станков</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Масляные охладители шпиндел</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Фильтры-уловители масляного тумана и паров СОЖ</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Гидростанции</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Резцедержки для токарных станков с ЧПУ</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Оборудование для подачи СОЖ</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Пульты станочные выносные</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Кондиционеры и теплообменники для электрошкафов</a></li>
+                    <li class="main-navigation__item"><a class="main-navigation__link" href="catalog.html">Муфты для сервоприводов</a></li>
+                  </ul>
+                </li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="producers.html">Производители</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="stock.html">Склад</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">
+                  <svg class="breadcrumbs__icon" width="12" height="12">
+                    <use xlink:href="#icon_arrow"></use>
+                  </svg>Главная</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="news.html">
+                  <svg class="breadcrumbs__icon" width="12" height="12">
+                    <use xlink:href="#icon_arrow"></use>
+                  </svg>Новости</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link">
+                  <svg class="breadcrumbs__icon" width="12" height="12">
+                    <use xlink:href="#icon_arrow"></use>
+                  </svg>Выставка «Металлообработка.Сварка — УРАЛ. 2018»</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="news">
+          <div class="container decorated-block">
+            <h1 class="news__header">Выставка «Металлообработка. Сварка — Урал. 2018»</h1>
+            <time class="news__date" datetime="2018-03-12">12 марта 2018</time>
+            <div class="news__description">
+              <p>Компания «Станким» примет участие в выставке «Металлообработка. Сварка — Урал. 2018», которая пройдет с 20 по 22 марта в ВЦ "Екатеринбург - ЭКСПО" по адресу: г. Екатеринбург, Экспо Бульвар, 2. Приглашаем вас посетить наш стенд №H33, который расположен в павильоне №1.</p>
+              <p>На стенде будут представлены следующие товары - станция подачи СОЖ под давлением до 40 бар, поворотный стол Ø200мм с управлением от ЧПУ, станочные светильники, импульсная станция смазки, трубки подачи СОЖ, пистолет подачи СОЖ, конечный выключатель, замок блокировки дверей ограждения станка, пульт выносной станочный (электронный маховик).</p>
+              <p>Наши сотрудники проконсультируют вас в вопросах приобретения современного металлообрабатывающего оборудования токарно-фрезерной группы и комплектующих для ремонта и модернизации станков с ЧПУ.</p>
+            </div>
+            <div class="carousel">
+              <div class="carousel__img-wrapper"><img class="carousel__img" src="" alt="">
+                <p class="carousel__img-description"> </p>
+              </div>
+              <div class="carousel__counter"><span class="carousel__current">1</span> из <span class="carousel__total">3</span></div>
+              <div class="carousel__previews">
+                <div class="carousel__previews-wrapper">
+                  <ul class="carousel__previews-list">
+                    <li class="carousel__previews-item"><a class="carousel__previews-link carousel__previews-link--active" href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 1" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 2" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 3" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 4" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 5" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 6" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 7" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 8" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 9" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 10" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 11" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg" alt=""></a></li>
+                    <li class="carousel__previews-item"><a class="carousel__previews-link" href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 1" target="_blank"><img class="carousel__previews-img" src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg" alt=""></a></li>
+                  </ul>
+                </div>
+                <div class="slider-controls slider-controls--carousel">
+                  <button class="slider-controls__button slider-controls__button--prev"><span class="visually-hidden">Прокрутить влево</span>
+                    <svg class="slider-controls__icon" width="8" height="8" aria-hidden="true" role="presentation">
+                      <use xlink:href="#icon_arrow"></use>
+                    </svg>
+                  </button>
+                  <button class="slider-controls__button"><span class="visually-hidden">Прокрутить вправо</span>
+                    <svg class="slider-controls__icon" width="8" height="8" aria-hidden="true" role="presentation">
+                      <use xlink:href="#icon_arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <div class="container">
+          <div class="page-footer__row">
+            <div class="logo"><a class="logo__link" href="index.html"><img class="logo__img" src="img/logo.svg" width="122" height="24" alt="Логотип Станким"></a></div>
+            <div class="main-navigation">
+              <ul class="main-navigation__list">
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Оборудование</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Комплектующие</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Производители</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Склад</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Услуги</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="layout-contacts">
+              <ul class="layout-contacts__list">
+                <li class="layout-contacts__item"><a class="layout-contacts__link" href="#">+7 (3412) 912-004</a></li>
+                <li class="layout-contacts__item"><a class="layout-contacts__link layout-contacts__link--email" href="#">office@stankim.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="page-footer__copyright">© 2018</div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

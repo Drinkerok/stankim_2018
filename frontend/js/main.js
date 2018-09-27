@@ -7,3 +7,5 @@ import './index/special-offers';
 import './index/partners';
 
 import './stock/stock';
+
+import './news/carousel';

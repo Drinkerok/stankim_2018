@@ -1,0 +1,75 @@
+extends ./layout/layout.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+
+  .news
+    .container.decorated-block
+      h1.news__header Выставка «Металлообработка. Сварка — Урал. 2018»
+      time.news__date(datetime="2018-03-12") 12 марта 2018
+
+      .news__description
+        p Компания «Станким» примет участие в выставке «Металлообработка. Сварка — Урал. 2018», которая пройдет с 20 по 22 марта в ВЦ "Екатеринбург - ЭКСПО" по адресу: г. Екатеринбург, Экспо Бульвар, 2. Приглашаем вас посетить наш стенд №H33, который расположен в павильоне №1.
+        p На стенде будут представлены следующие товары - станция подачи СОЖ под давлением до 40 бар, поворотный стол Ø200мм с управлением от ЧПУ, станочные светильники, импульсная станция смазки, трубки подачи СОЖ, пистолет подачи СОЖ, конечный выключатель, замок блокировки дверей ограждения станка, пульт выносной станочный (электронный маховик).
+        p Наши сотрудники проконсультируют вас в вопросах приобретения современного металлообрабатывающего оборудования токарно-фрезерной группы и комплектующих для ремонта и модернизации станков с ЧПУ.
+
+      .carousel
+        .carousel__img-wrapper
+          img.carousel__img(src="", alt="")
+          p.carousel__img-description 
+
+        .carousel__counter
+          span.carousel__current 1
+          |  из 
+          span.carousel__total 3
+
+        .carousel__previews
+          .carousel__previews-wrapper
+            ul.carousel__previews-list
+              li.carousel__previews-item
+                a.carousel__previews-link.carousel__previews-link--active(href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 1" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 2" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 3" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 4" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 5" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 6" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 7" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 8" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 9" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/9a/ss/bl/5b8e35058bea1.jpg" data-alt="Описание 10" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/ow/py/2s/5b8e35293192d.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/pg/gx/jq/5b8e36c63e8da.jpg" data-alt="Описание 11" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/s6/rq/9j/5b8e36cb67228.jpg", alt="")
+              li.carousel__previews-item
+                a.carousel__previews-link(href="http://stankim.snewer.ru/uploads/images/45/xc/np/5b8e36b62f3da.jpg" data-alt="Описание 1" target="_blank")
+                  img.carousel__previews-img(src="http://stankim.snewer.ru/uploads/images/i0/d9/xy/5b8e36cb76eaa.jpg", alt="")
+
+          .slider-controls.slider-controls--carousel
+            button.slider-controls__button.slider-controls__button--prev
+              span.visually-hidden Прокрутить влево
+              svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+                use(xlink:href="#icon_arrow")
+            button.slider-controls__button
+              span.visually-hidden Прокрутить вправо
+              svg.slider-controls__icon(width="8", height="8", aria-hidden="true", role="presentation")
+                use(xlink:href="#icon_arrow")
