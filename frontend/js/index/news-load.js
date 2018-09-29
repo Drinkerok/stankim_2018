@@ -1,6 +1,5 @@
 import {ajaxGet} from "./../components/ajax";
 
-const COUNT_LOAD_NEWS = 3;
 
 (function() {
   const news = document.querySelector(`.news`);
@@ -8,7 +7,7 @@ const COUNT_LOAD_NEWS = 3;
   const button = news.querySelector(`.news__more-link`);
   if (!button) return;
 
-  let counter = COUNT_LOAD_NEWS;
+  let counter = news.querySelectorAll(`.news-card`).length;
 
 
   const newsList = news.querySelector(`.news__list`);
@@ -56,11 +55,11 @@ const COUNT_LOAD_NEWS = 3;
     return li;
   }
   function initResponse(response, ...data) {
-    counter += COUNT_LOAD_NEWS;
     const news = response.data;
     if (!response.more) {
       button.parentNode.parentNode.removeChild(button.parentNode);
     }
+    counter += news.length;
 
     news.forEach(item => newsList.appendChild(addNews(item)));
   }

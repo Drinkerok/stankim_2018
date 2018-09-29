@@ -16,3 +16,5 @@ import './product/images';
 
 
 import './producer/images';
+
+import './contacts/map';

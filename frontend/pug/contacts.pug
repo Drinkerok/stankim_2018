@@ -1,0 +1,32 @@
+extends ./layout/layout.pug
+
+block content
+  include ./components/breadcrumbs.pug
+
+
+  .contacts
+    .container.decorated-block
+      h1.contacts__header Контакты
+
+      .contacts__row
+        ul.contacts__list
+          li.contacts__item
+            p.contacts__name Юридический адрес:
+            p.contacts__value ООО "Станким", ИНН 1831097040, КПП 183101001, 426057, г. Ижевск, ул. Свободы, д. 173, офис 905
+          li.contacts__item
+            p.contacts__name Фактический адрес:
+            p.contacts__value г. Ижевск, ул. 10 лет Октября, д. 60, офис 308Д
+          li.contacts__item
+            p.contacts__name Телефон:
+            p.contacts__value
+              a +7 (3412) 912-004
+          li.contacts__item
+            p.contacts__name Почта:
+            p.contacts__value
+              a office@stankim.com
+          li.contacts__item
+            p.contacts__name Доставка:
+            p.contacts__value Мы работаем с транспортными компаниями Деловые линии, ПЭК, Ратэк. Доставка товара до терминала транспортной компании в Ижевске осуществляется бесплатно.
+
+
+        .contacts__map
