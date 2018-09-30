@@ -3,7 +3,14 @@
 
   &--product {
     background-color: @bg-decorated-color;
-    padding: 0;
+    padding: 20px 0 0;
+  }
+
+
+  @media (min-width: @desktop) {
+    &--product {
+      padding: 0;
+    }
   }
 }
 

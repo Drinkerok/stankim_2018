@@ -1,10 +1,20 @@
 .logo {
-  width: 281px;
+  width: 145px;
   flex-shrink: 0;
 
 
   .page-footer & {
     width: 122px;
+  }
+
+
+
+  @media (min-width: @desktop) {
+    width: 281px;
+
+    .page-footer & {
+      width: 180px;
+    }
   }
 }
 

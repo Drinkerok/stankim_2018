@@ -1,6 +1,10 @@
 .index-promo {
   background-color: #e5e5e5;
-  padding-bottom: 150px;
+
+
+  @media (min-width: @desktop) {
+    padding-bottom: 150px;
+  }
 }
 
 
@@ -15,8 +19,7 @@
 
 
 .index-promo__info {
-  order: -1;
-  width: 55%;
+  width: 50%;
   flex-shrink: 0;
   padding: 25px 25px 25px 0;
   background-color: #fff;
@@ -43,4 +46,18 @@
 
 .index-promo__description {
   margin: 0 0 30px;
+}
+
+
+
+.index-promo__img-wrapper {
+  width: 45%;
+}
+
+
+
+.index-promo__img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
 }

@@ -1,6 +1,10 @@
 .breadcrumbs {
-  padding: 20px 0 0;
+  padding: 20px 0 10px;
   background-color: @bg-decorated-color;
+
+  @media (min-width: @desktop) {
+    padding: 20px 0 0;
+  }
 }
 
 
@@ -17,27 +21,39 @@
 
 
 .breadcrumbs__item {
-  margin: 0 5px 20px;
+  margin: 0 5px 10px;
+
+
+  @media (min-width: @desktop) {
+    margin: 0 5px 20px;
+  }
 }
 
 
 
 .breadcrumbs__link {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   display: block;
   color: @date-color-main;
+
+
+  @media (min-width: @desktop) {
+    font-size: 1.4rem;
+  }
 }
 
 
 
 .breadcrumbs__icon {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
   margin-right: 5px;
   transform-origin: 50% 50%;
   transform: rotate(180deg);
   fill: @date-color-main;
   transition: 0.3s fill;
+  width: 10px;
+  height: 10px;
 
   .breadcrumbs__link[href]:hover &,
   .breadcrumbs__link[href]:focus & {
@@ -46,5 +62,11 @@
 
   .breadcrumbs__link[href]:active & {
     fill: @link-color-active;
+  }
+
+
+  @media (min-width: @desktop) {
+    width: 12px;
+    height: 12px;
   }
 }

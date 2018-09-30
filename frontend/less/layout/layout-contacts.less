@@ -18,10 +18,15 @@
 
 
 .layout-contacts__item {
-  margin: 0 0 0 50px;
+  margin: 0 0 0 25px;
 
   .page-footer & {
     margin-bottom: 10px;
+  }
+
+
+  @media (min-width: @desktop) {
+    margin: 0 0 0 50px;
   }
 }
 
@@ -30,7 +35,7 @@
 .layout-contacts__link {
   display: block;
   position: relative;
-  padding: 1px 0 1px 25px;
+  padding: 1px 0;
   color: @text-color-main;
   font-weight: 500;
 
@@ -38,15 +43,26 @@
   .page-footer & {
     padding-left: 0;
   }
+
+
+  @media (min-width: @desktop) {
+    padding: 1px 0 1px 25px;
+  }
 }
 
 
 
 .layout-contacts__link-icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  display: none;
+
+
+  @media (min-width: @desktop) {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 }

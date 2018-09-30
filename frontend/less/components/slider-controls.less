@@ -25,8 +25,8 @@
 
 
 .slider-controls__button {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-color: transparent;
   border: none;
   border: 1px solid @shadow-color;
@@ -44,13 +44,19 @@
     cursor: default;
     cursor: not-allowed;
   }
+
+
+  @media (min-width: @desktop) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 
 
 .slider-controls__icon {
-  width: 15px;
-  height: 15px;
+  width: 8px;
+  height: 11px;
   display: block;
   position: absolute;
   top: 0;
@@ -74,5 +80,11 @@
   }
   .slider-controls__button:active & {
     fill: @link-color-active;
+  }
+
+
+  @media (min-width: @desktop) {
+    width: 15px;
+    height: 15px;
   }
 }
