@@ -35,7 +35,7 @@ import {ajaxPost} from './../components/ajax';
   form.onsubmit = (e) => {
     e.preventDefault();
     form.classList.add(`popup-ask__form--loading`);
-    ajaxPost(form.action, sendSuccess, sendFailed)
+    ajaxPost(form.action, sendSuccess, sendFailed, new FormData(form))
   }
 
   function sendSuccess(response) {

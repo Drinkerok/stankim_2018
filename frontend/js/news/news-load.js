@@ -70,7 +70,7 @@ import {ajaxGet} from "./../components/ajax";
     let time = template.querySelector(`.news-card__date`);
     let text = template.querySelector(`.news-card__header`);
 
-    link.href = item.href || `#`;
+    link.href = item.url || `#`;
     img.src = item.img || ``;
     img.alt = item.text || ``;
     time.textContent = item.time;

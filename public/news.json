@@ -6,21 +6,21 @@
       "img": "img/news-card.jpg",
       "date": "01.01.2018",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, cumque.",
-      "link": "one-news.html"
+      "url": "one-news.html"
     },
     {
       "id": "2",
       "img": "img/news-card.jpg",
       "date": "01.01.2018",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, cumque.",
-      "link": "one-news.html"
+      "url": "one-news.html"
     },
     {
       "id": "3",
       "img": "img/news-card.jpg",
       "date": "01.01.2018",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, cumque.",
-      "link": "one-news.html"
+      "url": "one-news.html"
     }
   ],
   "more": false

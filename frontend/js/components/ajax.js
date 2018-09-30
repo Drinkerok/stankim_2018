@@ -28,14 +28,14 @@ export function ajaxGet(link, onLoad, onError, ...data) {
 
 
 
-export function ajaxPost(link, onLoad, onError, ...data) {
+export function ajaxPost(link, onLoad, onError, data) {
   const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
 
   xhr.addEventListener('load', function () {
     switch (xhr.status) {
       case 200:
-        onLoad(xhr.response, data);
+        onLoad(xhr.response);
         break;
 
       default:
@@ -53,5 +53,5 @@ export function ajaxPost(link, onLoad, onError, ...data) {
 
 
   xhr.open('POST', link);
-  xhr.send();
+  xhr.send(data);
 }
