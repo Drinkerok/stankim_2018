@@ -57,8 +57,11 @@
 
 .contacts__map {
   margin: 20px 0 0;
-  height: 250px;
+  height: 200px;
 
+  @media (min-width: @tablet) {
+    height: 250px;
+  }
   @media (min-width: @desktop) {
     width: 50%;
     height: auto;

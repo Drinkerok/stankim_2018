@@ -1,6 +1,7 @@
 .logo {
   width: 145px;
   flex-shrink: 0;
+  margin: 0 auto;
 
 
   .page-footer & {
@@ -8,7 +9,11 @@
   }
 
 
-
+  @media (min-width: @tablet) {
+    .page-footer & {
+      margin: 0;
+    }
+  }
   @media (min-width: @desktop) {
     width: 281px;
 

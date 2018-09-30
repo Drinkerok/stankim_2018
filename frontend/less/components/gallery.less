@@ -24,6 +24,7 @@
 
 .gallery__link {
   .card();
+  height: 70px;
   position: relative;
 
   &--active {
@@ -54,6 +55,11 @@
       transform: translate(-50%, -50%);
     }
   }
+
+
+  @media (min-width: @desktop) {
+    height: 90px;
+  }
 }
 
 
@@ -61,4 +67,5 @@
 .gallery__preview {
   display: block;
   margin: 0 auto;
+  max-height: 100%;
 }

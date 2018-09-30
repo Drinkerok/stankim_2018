@@ -2,6 +2,10 @@
 
 import "picturefill";
 
+
+import './layout/menu';
+import './layout/search';
+
 import './index/special-offers';
 import './index/partners';
 

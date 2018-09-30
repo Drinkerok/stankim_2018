@@ -10,13 +10,16 @@
 
 
 .carousel__img-wrapper {
-  height: 430px;
+  height: 210px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 
 
+  @media (min-width: @tablet) {
+    height: 430px;
+  }
   @media (min-width: @desktop) {
     height: 510px;
   }

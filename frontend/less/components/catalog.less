@@ -1,5 +1,5 @@
 .catalog {
-  padding: 20px 0;
+  padding: 0 0 20px;
 
   &--product {
     background-color: @bg-decorated-color;
@@ -7,6 +7,9 @@
   }
 
 
+  @media (min-width: @tablet) {
+    padding: 20px 0;
+  }
   @media (min-width: @desktop) {
     &--product {
       padding: 0;
@@ -43,18 +46,27 @@
 
 
 .catalog__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: calc(~"100% + 20px");
-  margin: 0 -10px;
+  
   padding: 10px 0;
+
+
+  @media (min-width: @tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: calc(~"100% + 20px");
+    margin: 0 -10px;
+  }
 }
 
 
 
 .catalog__item {
-  margin: 0 10px 20px;
-  width: calc(~"25% - 20px");
+  margin: 0 0 10px;
+
+  @media (min-width: @tablet) {
+    margin: 0 10px 20px;
+    width: calc(~"25% - 20px");
+  }
 }

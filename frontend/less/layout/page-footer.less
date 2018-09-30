@@ -5,9 +5,12 @@
 
 
 .page-footer__row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+
+  @media (min-width: @tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 
