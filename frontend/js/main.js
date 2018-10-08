@@ -1,6 +1,7 @@
 'use strict';
 
-import "picturefill";
+import './components/polyfills';
+import 'picturefill';
 
 
 import './layout/menu';

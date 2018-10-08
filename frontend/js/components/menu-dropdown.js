@@ -2,6 +2,7 @@ let menuList = document.querySelector('.main-navigation__list');
 
 menuList.addEventListener('click', function(e) {
   if (e.target.classList.contains('main-navigation__link--dropdown')) {
+    console.log(e.target)
     e.preventDefault();
     toggleOpen(e.target)
   }

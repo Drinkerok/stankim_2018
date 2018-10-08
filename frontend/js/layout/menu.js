@@ -23,9 +23,9 @@ const menuEl = document.querySelector(`.page-header .main-navigation`);
 menuEl.addEventListener(`click`, (evt) => {
   if (document.documentElement.clientWidth >= TABLET_WIDTH) return;
 
-  const target = evt.target.classList.contains(`main-navigation__link`) ? evt.target : evt.target.closest(`.main-navigation__link`);
+  const target = evt.target.classList.contains(`main-navigation__link--dropdown`) ? evt.target : evt.target.closest(`.main-navigation__link--dropdown`);
 
-  if (!target || target.closest(`.main-navigation__list--dropdown`)) return;
+  if (!target) return;
 
   evt.preventDefault();
   target.classList.toggle(`main-navigation__link--open`);
