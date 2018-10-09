@@ -1,37 +1,30 @@
-// (function(){
-//   function addFont() {
-//     let style = document.createElement('style');
-//     style.rel = 'stylesheet';
-//     document.head.appendChild(style);
-//     style.textContent = localStorage.fonts;
-//   }
+(function () {
+  function addStyle() {
+    var style = document.createElement('style');
+    style.rel = 'stylesheet';
+    document.head.appendChild(style);
+    style.textContent = localStorage.styles;
+  }
 
-//   try {
-//     if (localStorage.fonts && false) {
-//       // The font is in localStorage, we can load it directly
-//       addFont();
-//     } else {
-//       // We have to first load the font file asynchronously
-//       let request = new XMLHttpRequest();
-//       request.open('GET', 'fonts/fonts.css', true);
+  try {
+    if (localStorage.styles && localStorage.styles_hash == '10.10.2018') {
+    addStyle();
+    } else {
+    var request = new XMLHttpRequest();
 
-//       request.onload = function() {
-//         if (request.status >= 200 && request.status < 400) {
-//           // We save the file in localStorage
-//           localStorage.fonts = request.responseText;
-
-//           // ... and load the font
-//           addFont();
-//         }
-//       }
-
-//       request.send();
-//     }
-//   } catch(ex) {
-//   // maybe load the font synchronously for woff-capable browsers
-//   // to avoid blinking on every request when localStorage is not available
-//   }
-// }());
+    request.open('GET', '/css/styles.css', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      localStorage.styles = request.responseText;
+      localStorage.styles_hash = '10.10.2018';
+      addStyle();
+      }
+    };
+    request.send();
+    }
+  } catch (ex) {
+  }
+})();
 
 
 // загрузка svg спрайта и сохранение в local.storage
