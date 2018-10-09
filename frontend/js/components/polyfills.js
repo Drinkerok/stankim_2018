@@ -1,3 +1,9 @@
+// promise
+import 'promise-polyfill/src/polyfill';
+// fetch
+import 'whatwg-fetch';
+
+
 // matches
 (function() {
 

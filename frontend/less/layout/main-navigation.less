@@ -73,6 +73,7 @@
       display: none;
 
       .main-navigation__link:hover + &,
+      .main-navigation__item:focus-within &,
       &:hover {
         display: flex;
       }
@@ -107,7 +108,7 @@
 
     .page-footer & {
       width: calc(~"33.333333% - 40px");
-      margin: 0 20px 10px;
+      margin: 0 10px 10px;
     }
   }
   @media (min-width: @desktop) {
@@ -117,13 +118,18 @@
       width: calc(~"33.333333% - 40px");
       margin: 0 20px 20px;
     }
+
+    .page-footer & {
+      margin: 0 20px 10px;
+    }
   }
 }
 
 
 
 .main-navigation__link {
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   padding-bottom: 10px;
 
   .main-navigation__list--dropdown & {

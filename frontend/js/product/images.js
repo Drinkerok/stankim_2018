@@ -11,8 +11,6 @@ import {setNewImg} from "./../components/common";
   const galleryEl = document.querySelector(`.gallery--photo`);
   let activeEl = galleryEl.querySelector(`.gallery__link--active`);
 
-  console.log(activeEl)
-
 
   galleryEl.addEventListener(`click`, (evt) => {
     const target = evt.target.classList.contains(`gallery__link`) ? evt.target : evt.target.closest(`.gallery__link`);

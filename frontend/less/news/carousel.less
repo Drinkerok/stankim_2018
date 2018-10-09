@@ -11,10 +11,11 @@
 
 .carousel__img-wrapper {
   height: 210px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   position: relative;
+  overflow: hidden;
 
 
   @media (min-width: @tablet) {
@@ -29,9 +30,13 @@
 
 .carousel__img {
   display: block;
-  margin: 0 auto;
+  // margin: 0 auto;
   max-height: 100%;
-  position: relative;
+  // position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 

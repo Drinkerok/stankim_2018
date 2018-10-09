@@ -54,7 +54,7 @@ import {ajaxGet} from "./../components/ajax";
 
     return li;
   }
-  function initResponse(response, ...data) {
+  function initResponse(response) {
     const news = response.data;
     if (!response.more) {
       button.parentNode.parentNode.removeChild(button.parentNode);
