@@ -107,8 +107,8 @@ gulp.task('webpack', function(callback) {
       .pipe($.babel({
         presets: ['es2015', 'stage-0']
       }))
-      // .pipe($.uglify({
-      // }))
+      .pipe($.uglify({
+      }))
       .pipe(gulp.dest('public/js'))
       .on('data', function() {
         if (firstBuildReady) {
