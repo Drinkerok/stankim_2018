@@ -25,9 +25,11 @@ import { tns } from "tiny-slider/src/tiny-slider";
     responsive: {
       768: {
         items: 3,
+        slideBy: 3,
       },
       999: {
         items: 4,
+        slideBy: 4,
       },
     },
   })

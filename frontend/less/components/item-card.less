@@ -1,5 +1,38 @@
 .item-card {
   .card();
+
+  &--price {
+    position: relative;
+
+    &:after {
+      content: 'Спеццена';
+      color: #fff;
+      text-align: center;
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: fade(@link-color-main, 70%);
+    }
+  }
+  &--stock {
+    position: relative;
+
+    &:after {
+      content: 'В наличии';
+      color: #fff;
+      text-align: center;
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(246,10,10,0.7);
+    }
+  }
 }
 
 
@@ -53,6 +86,12 @@
 
   @media (max-width: (@tablet - 1)) {
     text-align: center;
+  }
+
+  @media (min-width: @desktop) {
+    .special-offers & {
+      font-size: 1.8rem;
+    }
   }
 }
 

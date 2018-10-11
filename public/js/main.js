@@ -6320,10 +6320,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       gutter: 0,
       responsive: {
         768: {
-          items: 3
+          items: 3,
+          slideBy: 3
         },
         999: {
-          items: 4
+          items: 4,
+          slideBy: 4
         }
       }
     });
