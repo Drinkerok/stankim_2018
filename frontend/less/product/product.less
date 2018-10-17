@@ -140,7 +140,11 @@
 
 .product table {
   border-collapse: collapse;
-  max-width: 100%;
+
+
+  @media (min-width: @tablet) {
+    max-width: 100%;
+  }
 }
 .product__tables table {
   flex-shrink: 0;
@@ -212,19 +216,27 @@
 
 
 .product__equipments {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: calc(~"100% + 20px");
-  margin: 0 -10px;
+
+
+  @media (min-width: @tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(~"100% + 20px");
+    margin: 0 -10px;
+  }
 }
 
 
 
 .product__equipment {
-  width: calc(~"50% - 20px");
-  margin: 0 10px;
+  margin: 0 0 20px;
+
+  @media (min-width: @tablet) {
+    width: calc(~"50% - 20px");
+    margin: 0 10px;
+  }
 }
 
 
