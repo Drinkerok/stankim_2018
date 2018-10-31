@@ -7,6 +7,8 @@ import {ajaxPost} from './../components/ajax';
   const popupEl = document.querySelector(`.popup-ask`);
   if (!buttonEl || !popupEl) return;
 
+  const yandexCounter = yaCounter22113436;
+
 
   const inputsEls = Array.from(popupEl.querySelectorAll(`.popup-ask__input`));
   inputsEls.forEach((input) => {
@@ -19,6 +21,13 @@ import {ajaxPost} from './../components/ajax';
 
   buttonEl.onclick = (e) => {
     e.preventDefault();
+    if (yandexCounter) {
+      try {
+        yandexCounter.reachGoal('QUESTION')
+      }
+      catch (ex) {
+      }
+    }
     popupActions.open(popupEl, closePopup);
   };
 
@@ -39,6 +48,13 @@ import {ajaxPost} from './../components/ajax';
   }
 
   function sendSuccess(response) {
+    if (yandexCounter) {
+      try {
+        yandexCounter.reachGoal('SEND_QUESTION')
+      }
+      catch (ex) {
+      }
+    }
     inputsEls.forEach((input) => {
       localStorage.setItem(input.name, input.value);
     });
