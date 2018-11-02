@@ -7,8 +7,6 @@ import {ajaxPost} from './../components/ajax';
   const popupEl = document.querySelector(`.popup-ask`);
   if (!buttonEl || !popupEl) return;
 
-  const yandexCounter = yaCounter22113436;
-
 
   const inputsEls = Array.from(popupEl.querySelectorAll(`.popup-ask__input`));
   inputsEls.forEach((input) => {
@@ -21,9 +19,9 @@ import {ajaxPost} from './../components/ajax';
 
   buttonEl.onclick = (e) => {
     e.preventDefault();
-    if (yandexCounter) {
+    if (window.yandexCounter) {
       try {
-        yandexCounter.reachGoal('QUESTION')
+        window.yandexCounter.reachGoal('QUESTION')
       }
       catch (ex) {
       }
@@ -48,9 +46,9 @@ import {ajaxPost} from './../components/ajax';
   }
 
   function sendSuccess(response) {
-    if (yandexCounter) {
+    if (window.yandexCounter) {
       try {
-        yandexCounter.reachGoal('SEND_QUESTION')
+        window.yandexCounter.reachGoal('SEND_QUESTION')
       }
       catch (ex) {
       }
