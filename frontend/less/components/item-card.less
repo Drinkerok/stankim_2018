@@ -1,35 +1,24 @@
 .item-card {
   .card();
 
-  &--price {
-    position: relative;
 
-    &:after {
-      content: 'Спеццена';
+  .special-offers__item & {
+    &:before {
+      content: '';
       color: #fff;
       text-align: center;
       display: block;
       padding: 5px 0;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
+      background-color: transparent;
+    }
+
+    &--price:before {
+      content: 'Спеццена';
       background-color: fade(@link-color-main, 70%);
     }
-  }
-  &--stock {
-    position: relative;
 
-    &:after {
+    &--stock:before {
       content: 'В наличии';
-      color: #fff;
-      text-align: center;
-      display: block;
-      padding: 5px 0;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
       background-color: rgba(246,10,10,0.7);
     }
   }

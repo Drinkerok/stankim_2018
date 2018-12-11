@@ -19,9 +19,9 @@ import {ajaxPost} from './../components/ajax';
 
   buttonEl.onclick = (e) => {
     e.preventDefault();
-    if (window.yandexCounter) {
+    if (window.yaCounter22113436) {
       try {
-        window.yandexCounter.reachGoal('QUESTION')
+        window.yaCounter22113436.reachGoal('QUESTION')
       }
       catch (ex) {
       }
@@ -46,9 +46,9 @@ import {ajaxPost} from './../components/ajax';
   }
 
   function sendSuccess(response) {
-    if (window.yandexCounter) {
+    if (window.yaCounter22113436) {
       try {
-        window.yandexCounter.reachGoal('SEND_QUESTION')
+        window.yaCounter22113436.reachGoal('SEND_QUESTION')
       }
       catch (ex) {
       }
