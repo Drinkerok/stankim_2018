@@ -22,5 +22,6 @@ import './product/images';
 
 
 import './producer/images';
+import './producer/certificate';
 
 import './contacts/map';

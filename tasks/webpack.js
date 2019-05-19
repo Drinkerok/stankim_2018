@@ -10,7 +10,7 @@ const path = require('path');
 
 
 // const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
-const isDevelopment = false;
+const isDevelopment = true;
 
 module.exports = function(options) {
   let firstBuildReady = false;
