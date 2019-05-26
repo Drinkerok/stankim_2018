@@ -5,22 +5,27 @@ block content
 
   section.index-promo
     .container
-      .index-promo__content
-        .index-promo__img-wrapper
+      ul.index-promo__list
+        li.index-promo__item
           picture
-            source(media="(min-width: 1240px)", srcset="./img/promo-desktop.png")
-            source(media="(min-width: 768px)", srcset="./img/promo-tablet.png")
-            img.index-promo__img(src="./img/promo-mobile.png", alt="5-осевые фрезерные обрабатывающие центры EUMAСH серии UMC")
-        .index-promo__info
-          h2.index-promo__name 5-осевые фрезерные обрабатывающие центры EUMAСH серии UMC
-          p.index-promo__description Большая рабочая зона. Высокая скорость обработки.
-          .link
-            a.link__button(href="#") Узнать больше
+            source(media="(min-width: 1240px)", srcset="./img/promo_frez.jpg")
+            source(media="(min-width: 768px)", srcset="./img/promo_frez--tablet.jpg")
+            img.index-promo__img(src="./img/promo_frez--mobile.jpg", alt="Фрезерное оборудование")
+        li.index-promo__item
+          picture
+            source(media="(min-width: 1240px)", srcset="./img/promo_tokar.jpg")
+            source(media="(min-width: 768px)", srcset="./img/promo_tokar--tablet.jpg")
+            img.index-promo__img(src="./img/promo_tokar--mobile.jpg", alt="Фрезерное оборудование")
+        li.index-promo__item
+          picture
+            source(media="(min-width: 1240px)", srcset="./img/promo_povorot.jpg")
+            source(media="(min-width: 768px)", srcset="./img/promo_povorot--tablet.jpg")
+            img.index-promo__img(src="./img/promo_povorot--mobile.jpg", alt="Фрезерное оборудование")
 
 
 
   section.special-offers.section
-    .container.decorated-block
+    .container
       .section__header-row
         h2.section__header
           a.section__header-link Спецпредложения

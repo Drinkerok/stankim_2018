@@ -8,6 +8,7 @@ import 'picturefill';
 import './layout/menu';
 import './layout/search';
 
+import './index/promo';
 import './index/special-offers';
 import './index/partners';
 

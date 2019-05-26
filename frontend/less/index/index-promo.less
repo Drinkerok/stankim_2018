@@ -1,79 +1,12 @@
 .index-promo {
-  background-color: #e5e5e5;
-
-
-  @media (min-width: @desktop) {
-    padding-bottom: 150px;
-  }
+  margin: 20px 0;
 }
 
 
 
-.index-promo__content {
-  padding: 20px 0;
-
-
-  @media (min-width: @tablet) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
-  }
-}
-
-
-
-.index-promo__info {
-  padding: 15px;
-  margin: 0 -10px;
-  background-color: #fff;
+.index-promo .container {
   position: relative;
-
-
-  @media (min-width: @tablet) {
-    width: 50%;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 25px 25px 25px 0;
-    order: -1;
-
-    &:before {
-      content: '';
-      height: 100%;
-      width: 50vw;
-      background-color: #fff;
-      position: absolute;
-      top: 0;
-      right: 100%;
-    }
-  }
-}
-
-
-
-.index-promo__name {
-  .h2();
-}
-
-
-
-.index-promo__description {
-  margin: 0 0 15px;
-
-  @media (min-width: @tablet) {
-    margin: 0 0 30px;
-  }
-}
-
-
-
-.index-promo__img-wrapper {
-  padding: 10px;
-
-  @media (min-width: @tablet) {
-    width: 45%;
-    padding: 0;
-  }
+  padding: 0;
 }
 
 
@@ -81,5 +14,28 @@
 .index-promo__img {
   display: block;
   margin: 0 auto;
-  max-height: 100%;
+}
+
+
+
+.index-promo .tns-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+
+.index-promo .tns-nav button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #9a9a9a;
+  border: none;
+  margin: 0 4px;
+
+  &.tns-nav-active {
+    background-color: #006faa;
+  }
 }
