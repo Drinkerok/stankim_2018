@@ -26,3 +26,5 @@ import './producer/images';
 import './producer/certificate';
 
 import './contacts/map';
+
+import './components/metriks';
