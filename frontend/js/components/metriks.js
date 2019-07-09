@@ -1,5 +1,5 @@
 (function() {
-  const phoneLinkEls = Array.from(document.querySelectorAll('.layout-contacts__link--phone'));
+  const phoneLinkEls = Array.from(document.querySelectorAll('.phone-link'));
   phoneLinkEls.forEach(link => {
     link.addEventListener('copy', (evt) => {
       if (window.yaCounter22113436) {
@@ -12,7 +12,7 @@
     })
   })
 
-  const mailLinkEls = Array.from(document.querySelectorAll('.layout-contacts__link--email'));
+  const mailLinkEls = Array.from(document.querySelectorAll('.email-link'));
   mailLinkEls.forEach(link => {
     link.addEventListener('copy', (evt) => {
       if (window.yaCounter22113436) {
