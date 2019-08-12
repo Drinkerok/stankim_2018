@@ -46,6 +46,10 @@ import {ajaxPost} from './../components/ajax';
   }
 
   function sendSuccess(response) {
+    if (response.success === false) {
+      alert(response.message || 'Что-то пошло не так')
+      return;
+    }
     if (window.yaCounter22113436) {
       try {
         window.yaCounter22113436.reachGoal('SEND_QUESTION')
