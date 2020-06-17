@@ -1,0 +1,75 @@
+.notification-banner {
+  background-color: rgba(0, 91, 138, 0.7);
+  padding: 10px 0;
+
+  .container {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '!';
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation-name: signLightning;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+      @media (min-width: @desktop) {
+        font-size: 4.2rem;
+      }
+    }
+
+    &::before {
+      left: 10px;
+
+      @media (min-width: @desktop) {
+        left: 0;
+      }
+    }
+    &::after {
+      right: 10px;
+
+      @media (min-width: @desktop) {
+        right: 0;
+      }
+    }
+  }
+}
+
+.notification-banner__text {
+  margin: 0;
+  padding: 0 50px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.22;
+  color: #fff;
+
+  @media (min-width: @desktop) {
+    font-size: 2rem;
+  }
+}
+
+.notification-banner a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: underline;
+}
+
+@keyframes signLightning {
+  0% {
+    color: #fff;
+  }
+  25% {
+    color: rgba(246, 10, 10, 0.7);
+  }
+  50% {
+    color: #fff;
+  }
+  75% {
+    color: @text-color-main;
+  }
+}

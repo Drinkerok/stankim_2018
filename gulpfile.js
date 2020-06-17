@@ -67,7 +67,7 @@ lazyRequireTask('lint', './tasks/lint.js', {
 
 gulp.task('webpack', function(callback) {
   let firstBuildReady = false;
-  let isDevelopment = true;
+  let isDevelopment = false;
 
   function done(err, stats) {
     firstBuildReady = true;
