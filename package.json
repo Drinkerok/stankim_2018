@@ -37,7 +37,7 @@
     "picturefill": "^3.0.2",
     "promise-polyfill": "^8.1.0",
     "stream-combiner2": "^1.1.1",
-    "stylelint": "^9.2.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-htmlacademy": "^0.1.1",
     "through2": "^2.0.3",
     "tiny-slider": "^2.8.2",
